@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <title>Kneipentour</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body">
+    <!--background gradient-->
+    <div class="bg-gradient"></div>
+    <!--background clouds-->
+    <div class="bg-clouds" id="clouds">
+        <img src="pics/clouds.svg" alt="" />
+    </div>
+    <!--elements containing actual content-->
+    <div class="content">
+        <div class="flexbox">
+            <div class="lang-button-wrapper">
+                <a href="../index.html" id="home-button" class="home-button">&lt;</a>
+            </div>
+            <div class="lang-button-wrapper">
+                <button id="lang-button" class="lang-button">...</button>
+            </div>
+        </div>
+        <!--Title svg-->
+        <div class="title-wrapper">
+            <img src="pics/title.svg" alt="Title" />
+        </div>
+        <div class="divider"></div>
+
+        <!--actual html content-->
+        <div id="lang-text"></div>
+
+        <div class="generic-divider"></div>
+        <!--Bar rotations-->
+        <div class="bar-rotations-container">
+            <img src="pics/bar-rotations.svg" alt="">
+        </div>
+        <div class="generic-divider"></div>
+    </div>
+    <!-- background city -->
+    <div class="bg-city">
+        <img src="pics/city.svg" alt="" />
+    </div>
+
+    <!--Scripts-->
+    <script src="script/height-solver.js"></script>
+    <!--Manages language of actual html text-->
+    <script src="script/translations.js"></script>
+</body>
+</html>

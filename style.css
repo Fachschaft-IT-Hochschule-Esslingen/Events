@@ -42,3 +42,7 @@ h1 {
     color: var(--red);
     font-weight: bold;
 }
+
+a {
+    color: var(--red);
+}
