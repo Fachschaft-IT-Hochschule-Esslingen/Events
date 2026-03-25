@@ -1,2 +1,2 @@
 # Events
-Hier werden alle Events der fachschaft IT gelistet
+Hier werden alle Events der Fachschaft IT gelistet
