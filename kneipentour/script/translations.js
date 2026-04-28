@@ -25,7 +25,7 @@ function onChangeLang() {
 }
 
 function loadLang() {
-    const file = "kneipentour/lang/" + langs[lang_index] + ".html";
+    const file = "lang/" + langs[lang_index] + ".html";
 
     const text = document.getElementById("lang-text");
 
