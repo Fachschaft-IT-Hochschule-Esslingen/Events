@@ -1,6 +1,6 @@
 const basedelay = 10000
 
-setTimeout(switchImage,basedelay);
+setTimeout(switchImage,basedelay + 5000);
 
 
 function switchImage(){
