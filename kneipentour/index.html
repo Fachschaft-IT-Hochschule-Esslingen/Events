@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Kneipentour</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
-<body id="body">
-    <!--background gradient-->
-    <div class="bg-gradient"></div>
-    <!--background clouds-->
-    <div class="bg-clouds" id="clouds">
-        <img src="pics/clouds.svg" alt="" />
-    </div>
-    <!--elements containing actual content-->
-    <div class="content">
-        <div class="flexbox">
-            <div class="lang-button-wrapper">
-                <a href="../index.html" id="home-button" class="home-button">&lt;</a>
-            </div>
-            <div class="lang-button-wrapper">
-                <button id="lang-button" class="lang-button">...</button>
-            </div>
-        </div>
-        <!--Title svg-->
-        <div class="title-wrapper">
-            <img src="pics/title.svg" alt="Title" />
-        </div>
-        <div class="divider"></div>
 
-        <!--actual html content-->
-        <div id="lang-text"></div>
+<body id="body" class="dark-mode">
 
-        <div class="generic-divider"></div>
-    </div>
-    <!-- background city -->
-    <div class="bg-city">
-        <img src="pics/city.svg" alt="" />
+<div id="logo">
+    <img id="logo-dark" src="images/logo_dark.svg" alt="Logo der Fachschaft IT">
+    <img id="logo-light" src="images/logo_light.svg" alt="Logo der Fachschaft IT">
+</div>
+
+<div id="toggle-button">
+    <a onclick="toggleColorMode()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+        </svg>
+    </a>
+</div>
+
+<div id="container">
+
+    <div id="left">
+        <img id="poster" src="images/KneipentourWS2026.jpg" alt="Plakat zum Spieleabend">
     </div>
 
-    <!--Scripts-->
-    <!--Manages language of actual html text-->
-    <script src="script/translations.js"></script>
+    <div id="right">
+
+        <h1>Ersti Kneipentour 16.10.2026</h1>
+        <p><strong>Wer: Jeder ist wilkommen, egal welcher Fakultät! Bringt auch gerne Freunde mit.</strong></p>
+        <br>
+        <p><strong>Treffpunkt: Komma Esslingen</strong></p>
+        <br>
+        <p><strong>Eure Fachschaften</strong></p>
+
+    </div>
+</div>
+
+
+<script>
+    function toggleColorMode() {
+        document.getElementById("body").classList.toggle("dark-mode");
+    }
+</script>
+
 </body>
 </html>
