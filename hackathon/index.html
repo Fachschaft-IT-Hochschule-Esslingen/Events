@@ -4,27 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Spieleabend – Fachschaft IT</title>
+    <title>Hackathon – Fachschaft IT</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
-<body>
-    <h1>Hackathon der Fachschaft IT</h1>
-
-    <div id="container">
-        <div id="poster">
-            <img id="poster1" src="images/hackathon1.svg" alt="Hackathon Poster" hidden="hidden" class="poster">
-            <img id="poster2" src="images/hackathon2.svg" alt="Hackathon Poster 2" class="poster">
-        </div>
-        <div id="info">
-            <p>Am <span class="notice">08.05.26 ab 18 Uhr bis zum 09.05.26</span> veranstaltet die Fachschaft IT nach etwas Pause mal wieder einen Hackathon.</p>
-            <br>
-            <p>Das Thema dieses Mal wird "bad UI/UX design" sein. Je unbrauchbarer die Benutzeroberfläche ist, desto besser!</p>
-            <p>Es sind Studierende aller Fakultäten und Skill-Levels willkommen. Bringt gerne Freunde mit.</p>
-            <br>
-            <p>Eure Fachschaft IT freut sich auf eure Teilnahme!</p>
-        </div>
+<body id="body" class="dark-mode">
+    <div id="logo">
+        <img id="logo-dark" src="images/logo_dark.svg" alt="Logo der Fachschaft IT">
+        <img id="logo-light" src="images/logo_light.svg" alt="Logo der Fachschaft IT">
     </div>
 
+    <div id="return-button">
+        <a href="../" title="Zurück zur Übersicht" aria-label="Zurück zur Übersicht">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div id="toggle-button">
+        <a onclick="toggleColorMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div id="container">
+        <h1>Hackathon der Fachschaft IT</h1>
+        <p class="date">04.12.2026 – 05.12.2026</p>
+        <p>Weitere Infos folgen noch.</p>
+    </div>
+
+    <script>
+        function toggleColorMode() {
+            document.getElementById("body").classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>

@@ -26,6 +26,23 @@ footer a {
     text-decoration: none;
 }
 
+#logo {
+    top: 0;
+    left: 0;
+    width: 280px;
+    position: absolute;
+}
+
+#logo img {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    #logo {
+        width: 200px;
+    }
+}
+
 #container {
     text-align: center;
     padding: 20px;

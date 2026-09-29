@@ -33,10 +33,14 @@ body {
 /* Logo */
 
 #logo {
-    top: 24px;
-    left: 24px;
-    width: 180px;
+    top: 0;
+    left: 0;
+    width: 280px;
     position: absolute;
+}
+
+#logo img {
+    width: 100%;
 }
 
 #logo-dark {
@@ -53,7 +57,7 @@ body {
 
 #toggle-button {
     top: 24px;
-    right: 24px;
+    right: 72px;
     position: absolute;
 }
 
@@ -62,6 +66,27 @@ body {
     height: 32px;
     cursor: pointer;
     fill: var(--text-light);
+}
+
+
+
+/* Return button */
+
+#return-button {
+    top: 24px;
+    right: 24px;
+    position: absolute;
+}
+
+#return-button svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    fill: var(--text-light);
+}
+
+body.dark-mode #return-button svg {
+    fill: #fff;
 }
 
 
@@ -208,6 +233,14 @@ body.dark-mode #footer {
     #left {
         text-align: left;
         margin-bottom: 16px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    #logo {
+        width: 200px;
     }
 
 }

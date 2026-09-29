@@ -1,7 +1,7 @@
 :root {
     --red: #DA3359;
-    --text: #ffffff;
-    --background: #262626;
+    --text-light: #161A1D;
+    --background-dark: #262626;
 }
 
 * {
@@ -10,55 +10,121 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    background: var(--background);
-    color: var(--text);
+    color: var(--text-light);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
     text-align: center;
     min-height: 100%;
+    display: flex;
 }
+
+
+
+/* Logo */
+
+#logo {
+    top: 0;
+    left: 0;
+    width: 280px;
+    position: absolute;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#logo-dark {
+    display: block;
+}
+
+#logo-light {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    #logo {
+        width: 200px;
+    }
+}
+
+
+
+/* Return button */
+
+#return-button {
+    top: 24px;
+    right: 24px;
+    position: absolute;
+}
+
+#return-button svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    fill: var(--text-light);
+}
+
+
+
+/* Toggle button */
+
+#toggle-button {
+    top: 24px;
+    right: 72px;
+    position: absolute;
+}
+
+#toggle-button svg {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    fill: var(--text-light);
+}
+
+
+
+/* Container */
 
 #container {
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#info {
-    max-width: 30vw;
-    margin-left: 5em;
-}
-
-p {
-    text-align: left;
-}
-
-.poster {
-    width: 100%;
-    max-width: 450px;
-    margin-bottom: 24px;
-    max-height: 80vh;
+    margin: auto;
+    padding: 80px 24px;
 }
 
 h1 {
-    font-size: 28px;
-    margin: 12px;
-    align-self: center;
+    font-size: 32px;
+    margin-bottom: 16px;
 }
 
-.notice {
+.date {
     color: var(--red);
+    font-size: 22px;
     font-weight: bold;
+    margin-bottom: 8px;
 }
 
-@media (max-width: 700px) {
-    #container  {
-        display: block;
-    }
-    #info {
-        max-width: 90vw;
-        margin-left: auto;
-    }
+
+
+/* Dark mode */
+
+body.dark-mode {
+    color: #fff;
+    background-color: var(--background-dark);
+}
+
+body.dark-mode #logo-dark {
+    display: none;
+}
+
+body.dark-mode #logo-light {
+    display: block;
+}
+
+body.dark-mode #return-button svg,
+body.dark-mode #toggle-button svg {
+    fill: #fff;
 }
