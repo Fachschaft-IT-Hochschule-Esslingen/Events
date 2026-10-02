@@ -1,45 +1,57 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="dark-mode">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Events – Fachschaft IT</title>
-    <link rel="stylesheet" href="style.css"> <!-- Default  -->
-    <link rel="stylesheet" href="index.css"> <!-- Local override -->
+
+    <link rel="stylesheet" href="assets/css/base.css"> <!-- Gemeinsames Layout -->
+    <link rel="stylesheet" href="index.css">           <!-- Anpassungen nur für die Übersicht -->
+    <script src="assets/js/theme.js"></script>
 </head>
 
 <body>
 
-<div id="logo">
-    <img src="images/logo_light.svg" alt="Logo der Fachschaft IT">
-</div>
+<!-- Header wie auf den Event-Seiten, nur ohne Zurück-Button -->
+<header class="site-header">
+    <a class="logo" href="./" title="Zur Übersicht">
+        <img class="logo-dark" src="assets/images/logo_dark.svg" alt="Logo der Fachschaft IT">
+        <img class="logo-light" src="assets/images/logo_light.svg" alt="Logo der Fachschaft IT">
+    </a>
 
-<div id="container">
+    <div class="header-actions">
+        <button type="button" class="icon-button" onclick="toggleColorMode()" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+
+<main class="page centered">
     <!-- TODO: altes hackathon poster einfügen-->
     <!--
-        <img id="poster" src="poster.png" alt="Hackathon Poster">
+        <img class="poster" src="poster.png" alt="Hackathon Poster">
     -->
 
     <h1>Eventsübersichtsseite der Fachschaft IT</h1>
 
-    <br><br>
+    <!-- Neues Event: Link hier ergänzen, siehe _template/README.md -->
+    <nav class="event-list">
+        <a class="button" href="spieleabend/">Spieleabend</a>
+        <a class="button" href="kneipentour/">Kneipentour</a>
+        <a class="button" href="hackathon/">Hackathon</a>
+        <a class="button" href="it-girls/">IT-Girls</a>
+    </nav>
+</main>
 
-    <p>Spieleabend: <a href="./spieleabend/">
-        https://fachschaft-it-hochschule-esslingen.github.io/Events/spieleabend/</a>
-    </p><br>
 
-    <p>Kneipentour: <a href="./kneipentour/">
-        https://fachschaft-it-hochschule-esslingen.github.io/Events/kneipentour/</a>
-    </p><br>
-
-    <p>Hackathon: <a href="./hackathon/">
-        https://fachschaft-it-hochschule-esslingen.github.io/Events/hackathon/</a>
-    </p><br>
-</div>
-<footer>
+<footer class="site-footer">
     <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a>
     <a href="https://moodle.hs-esslingen.de/moodle/course/view.php?id=26454" target="_blank">Moodle</a>
 </footer>
+
 </body>
 </html>

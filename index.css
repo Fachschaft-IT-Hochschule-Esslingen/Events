@@ -1,65 +1,13 @@
+/*
+    Anpassungen nur für die Übersichtsseite.
+    Das gemeinsame Layout kommt aus assets/css/base.css.
+*/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+.event-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-footer a {
-    margin: 0.5em 2em;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#logo {
-    top: 0;
-    left: 0;
-    width: 280px;
-    position: absolute;
-}
-
-#logo img {
-    width: 100%;
-}
-
-@media (max-width: 500px) {
-    #logo {
-        width: 200px;
-    }
-}
-
-#container {
-    text-align: center;
-    padding: 20px;
-    max-width: 600px;
-}
-
-#poster {
-    width: 100%;
-    max-width: 450px;
-    margin-bottom: 24px;
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-a {
-    color: var(--red);
+    max-width: 320px;
+    margin: 24px auto 0;
 }
