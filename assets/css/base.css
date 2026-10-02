@@ -1,0 +1,226 @@
+/*
+    Gemeinsames Layout für alle Event-Seiten der Fachschaft IT.
+    Seitenspezifische Anpassungen gehören in die style.css des jeweiligen Event-Ordners.
+*/
+
+/* Farben */
+
+:root {
+    --red: #DA3359;
+    --text: #161A1D;
+    --background: #ffffff;
+    --link: rgb(76, 66, 255);
+    --backdrop: rgba(0, 0, 0, 0.09);
+}
+
+:root.dark-mode {
+    --text: #ffffff;
+    --background: #262626;
+    --link: darkorange;
+    --backdrop: rgba(255, 255, 255, 0.03);
+}
+
+
+
+/* Grundlayout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--background);
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
+    color: var(--link);
+}
+
+.highlight {
+    color: var(--red);
+    font-weight: bold;
+}
+
+
+
+/* Header: Logo links, Buttons rechts */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    display: block;
+    width: 280px;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+.logo-light {
+    display: none !important;
+}
+
+.dark-mode .logo-dark {
+    display: none !important;
+}
+
+.dark-mode .logo-light {
+    display: block !important;
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+}
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.icon-button svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+
+
+/* Inhalt */
+
+.page {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Variante 1: Plakat links, Text rechts */
+
+.split {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+}
+
+.split > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.poster-column {
+    text-align: center;
+}
+
+.poster {
+    width: 100%;
+    max-width: 450px;
+    max-height: 800px;
+    object-fit: contain;
+}
+
+/* Variante 2: kurzer Text mittig */
+
+.centered {
+    text-align: center;
+}
+
+.button {
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid var(--red);
+    background-color: var(--red);
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.button:hover {
+    color: var(--red);
+    background-color: var(--background);
+}
+
+
+
+/* Footer */
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    padding: 0.5em 0;
+    background: linear-gradient(to top, var(--backdrop), rgba(0, 0, 0, 0));
+}
+
+.site-footer a {
+    color: var(--red);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+/* Mobile Geräte */
+
+@media (max-width: 900px) {
+
+    .split {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .split > * {
+        flex: none;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        width: 200px;
+    }
+
+    .header-actions {
+        padding: 16px;
+    }
+
+}

@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hackathon – Fachschaft IT</title>
+    <!-- TODO: Name des Events eintragen -->
+    <title>Event-Name – Fachschaft IT</title>
 
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/base.css"> <!-- Gemeinsames Layout, nicht ändern -->
+    <link rel="stylesheet" href="style.css">               <!-- Anpassungen nur für dieses Event -->
     <script src="../assets/js/theme.js"></script>
 </head>
 
@@ -36,10 +37,38 @@
 <!-- ===== Ende Header ===== -->
 
 
-<main class="page centered">
-    <h1>Hackathon der Fachschaft IT</h1>
-    <p class="highlight">04.12.2026 – 05.12.2026</p>
-    <p>Weitere Infos folgen noch.</p>
+<!--
+    Inhalt: zwei Varianten stehen zur Auswahl.
+
+    Variante 1 (unten aktiv): Plakat links, Text rechts  ->  <main class="page split">
+    Variante 2: nur kurzer Text mittig                   ->  <main class="page centered">
+
+        <main class="page centered">
+            <h1>Event-Name</h1>
+            <p class="highlight">Die Termine folgen bald.</p>
+        </main>
+-->
+<main class="page split">
+
+    <div class="poster-column">
+        <img class="poster" src="images/poster.svg" alt="Plakat zum Event">
+    </div>
+
+    <div>
+        <h1>Event-Name</h1>
+
+        <p class="highlight">01.01.2027 ab 18:00 Uhr</p>
+
+        <p>
+            <strong>Wo:</strong> Raum eintragen<br>
+            <strong>Wer:</strong> alle Studierenden der Hochschule Esslingen
+        </p>
+
+        <p>Kurze Beschreibung des Events. Links sehen so aus: <a href="https://www.instagram.com/fachschaft.it">Instagram</a>.</p>
+
+        <p><strong>Eure Fachschaft IT</strong></p>
+    </div>
+
 </main>
 
 
