@@ -3,3 +3,103 @@
     Das gemeinsame Layout (Logo, Buttons, Farben, Hell/Dunkel) kommt aus ../assets/css/base.css.
     Bleibt die Datei leer, sieht die Seite aus wie alle anderen.
 */
+/*
+    Anpassungen nur für die IT-Girls-Seite.
+    Das gemeinsame Layout kommt aus ../assets/css/base.css.
+*/
+
+/*
+    Farbschema nach dem Plakat: Hintergrund bleibt wie im Original (base.css),
+    die Schrift im Dunkelmodus wird hellrosa. Zum Anpassen nur diese Werte ändern.
+*/
+:root {
+    --event-text: #f9d3e3;    /* hellrosa Schrift */
+    --event-accent: #df6fa1;  /* Pink vom Plakat (Links) */
+}
+
+html.dark-mode .event-page {
+    color: var(--event-text);
+}
+
+html.dark-mode .event-page a {
+    color: var(--event-accent);
+}
+
+/* Zwei Spalten: Plakat links, Text rechts */
+.event-page {
+    text-align: left;
+}
+
+.event-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 48px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Textspalte */
+.event-text h1 {
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+}
+
+.event-text p {
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+.lead {
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.facts strong {
+    font-weight: 700;
+}
+
+/* Terminliste */
+.termine {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.termine li.past {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
+.termine li.next {
+    font-weight: 700;
+}
+
+/* Link */
+.event-text a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+/* Handy: eine Spalte, Plakat oben */
+@media (max-width: 800px) {
+    .event-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .poster {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
