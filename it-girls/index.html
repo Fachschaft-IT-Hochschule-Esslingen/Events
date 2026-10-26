@@ -36,17 +36,66 @@
 <!-- ===== Ende Header ===== -->
 
 
-<main class="page centered">
-    <h1>IT-Girls</h1>
-    <p class="highlight">Nächster Termin: 27.10.2026</p>
+<main class="page event-page">
+    <div class="event-layout">
+
+        <img class="poster" src="./assets/poster.png" alt="Plakat: IT Girls, WiSe 26/27. Entspannte Atmosphäre und Safespace zum Austausch, Termine am 27.10., 18.11., 17.12. und 15.01. jeweils ab 17 Uhr im Raum F01.-208">
+
+        <div class="event-text">
+            <h1>IT Girls – WiSe 26/27</h1>
+
+            <p class="lead">Komm vorbei und freue dich auf eine entspannte Atmosphäre und einen Safespace zum Austausch.☺</p>
+
+            <p class="facts">
+                <strong>Wo:</strong> Raum F01.-208 (Fachschaft IT)<br>
+                <strong>Wann:</strong> ab 17 Uhr am:
+            </p>
+
+            <!--
+                Termine pflegen: pro Termin ein <li> mit data-date="JJJJ-MM-TT".
+                Vergangene Termine werden automatisch durchgestrichen,
+                der nächste Termin wird automatisch hervorgehoben.
+            -->
+            <ul class="termine" id="termine">
+                <li data-date="2026-10-27">Dienstag, 27.10.2026</li>
+                <li data-date="2026-11-18">Mittwoch, 18.11.2026</li>
+                <li data-date="2026-12-17">Donnerstag, 17.12.2026</li>
+                <li data-date="2027-01-15">Freitag, 15.01.2027</li>
+            </ul>
+
+            <p>
+                Link zur WhatsApp-Gruppe:<br>
+                <a href="https://chat.whatsapp.com/Bd1ufVkTNUD9VH4BN92XUi" target="_blank" rel="noopener">https://chat.whatsapp.com/Bd1ufVkTNUD9VH4BN92XUi</a>
+            </p>
+        </div>
+
+    </div>
 </main>
 
 
-<!-- ===== Footer: für alle Seiten gleich, nicht ändern ===== -->
 <footer class="site-footer">
     <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a>
     <a href="https://moodle.hs-esslingen.de/moodle/course/view.php?id=26454" target="_blank">Moodle</a>
 </footer>
+
+<script>
+    // Termine automatisch markieren: vergangene durchstreichen, nächsten hervorheben
+    (function () {
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var nextFound = false;
+
+        document.querySelectorAll("#termine li").forEach(function (li) {
+            var date = new Date(li.dataset.date + "T00:00:00");
+            if (date < today) {
+                li.classList.add("past");
+            } else if (!nextFound) {
+                li.classList.add("next");
+                nextFound = true;
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
