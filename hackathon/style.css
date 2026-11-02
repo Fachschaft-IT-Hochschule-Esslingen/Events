@@ -1,5 +1,707 @@
 /*
-    Anpassungen nur für dieses Event.
-    Das gemeinsame Layout (Logo, Buttons, Farben, Hell/Dunkel) kommt aus ../assets/css/base.css.
-    Bleibt die Datei leer, sieht die Seite aus wie alle anderen.
+    Anpassungen nur für die Hackathon-Seite: Terminal-Look wie das Plakat (HackathonPosterWS26_27).
+    Das gemeinsame Layout (Logo, Buttons, Hell/Dunkel) kommt aus ../assets/css/base.css.
 */
+
+/*
+    Schrift vom Plakat: DejaVu Sans Mono (freie Lizenz, https://dejavu-fonts.github.io/License.html).
+    Nur die benötigten Zeichen (Latein, Umlaute, Rahmen- und Blockzeichen), damit die Datei klein bleibt.
+*/
+@font-face {
+    font-family: "DejaVu Sans Mono Web";
+    src: url("fonts/DejaVuSansMono.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DejaVu Sans Mono Web";
+    src: url("fonts/DejaVuSansMono-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-display: swap;
+}
+
+/* Farben vom Plakat (Dunkelmodus) */
+:root {
+    --term-bg: #0D1117;
+    --term-bar: #161B22;
+    --term-border: #30363D;
+    --term-fg: #C9D1D9;
+    --term-dim: #8B949E;
+    --term-green: #3FB950;
+    --term-amber: #E3B341;
+    --term-prompt: #58A6FF;
+    --term-warn: #D29922;
+    --fs-red: #DB2F57;
+    --asta-orange: #E3610E;
+    --asta-navy: #9DB4DC;
+    --glow: 0 0 6px rgba(63, 185, 80, 0.45);
+    --scanline: rgba(255, 255, 255, 0.025);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    --mono: "DejaVu Sans Mono Web", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+}
+
+/*
+    Hellmodus: helles Terminal. Grün und Gold sind deutlich dunkler,
+    damit sie auf hellem Grund gut lesbar bleiben (Kontrast mind. 4.5:1).
+*/
+html:not(.dark-mode) {
+    --term-bg: #F6F8FA;
+    --term-bar: #EAEEF2;
+    --term-border: #D0D7DE;
+    --term-fg: #1F2328;
+    --term-dim: #59636E;
+    --term-green: #1A7F37;
+    --term-amber: #8A5A00;
+    --term-prompt: #0969DA;
+    --term-warn: #BC4C00;
+    --asta-orange: #C4500A;
+    --asta-navy: #1A3155; /* Original-Blau vom AStA-Logo */
+    --glow: none;
+    --scanline: rgba(0, 0, 0, 0.03);
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Im Dunkelmodus verschmilzt die Seite mit dem Terminal */
+html.dark-mode body {
+    background-color: var(--term-bg);
+}
+
+
+
+/* Fenster */
+
+.hackathon {
+    max-width: 1100px;
+}
+
+.terminal {
+    width: 100%;
+    background: var(--term-bg);
+    color: var(--term-fg);
+    border: 1px solid var(--term-border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.2s, color 0.2s;
+
+    font-family: var(--mono);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Leichte Scanlines wie bei einem alten Monitor */
+.terminal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, var(--scanline) 0 1px, transparent 1px 3px);
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--term-bar);
+    border-bottom: 1px solid var(--term-border);
+    font-size: 13px;
+    color: var(--term-dim);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex: none;
+}
+
+.dot.red   { background: #FF5F57; }
+.dot.amber { background: #FEBC2E; }
+.dot.green { background: #28C840; }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    margin-right: 52px; /* gleicht die drei Punkte aus, damit der Titel mittig steht */
+}
+
+.skip-hint {
+    display: none;
+}
+
+.terminal-body {
+    padding: 28px 32px 32px;
+    container-type: inline-size; /* für die Skalierung der ASCII-Grafiken */
+}
+
+.terminal p {
+    margin: 0;
+}
+
+
+
+/* Prompt */
+
+.prompt {
+    color: var(--term-fg);
+    overflow-wrap: anywhere;
+    margin-top: 2.2em !important;
+}
+
+.prompt:first-child {
+    margin-top: 0 !important;
+}
+
+.ps1 {
+    color: var(--term-prompt);
+}
+
+.fg {
+    color: var(--term-fg);
+}
+
+.prompt.typing .cmd::after,
+.cursor {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    vertical-align: -0.2em;
+    background: var(--term-fg);
+}
+
+.cursor {
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+
+
+/*
+    ASCII-Grafiken (Banner, Schaltplan): script.js skaliert sie per transform genau auf die Breite.
+    Ohne JavaScript wird die Schriftgröße so berechnet, dass --cols Zeichen hineinpassen
+    (DejaVu: Zeichenbreite 0.602 em). Auf dem Laptop werden sie nicht größer als 15px.
+*/
+
+.art-fit {
+    overflow: hidden;
+}
+
+.art {
+    font-family: var(--mono);
+    font-size: min(15px, 100cqi / (var(--cols) * 0.6021));
+    line-height: 1.17; /* so schließen die Rahmenzeichen lückenlos aneinander an */
+    white-space: pre;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.art.fitted {
+    font-size: 15px;
+    margin: 0;
+    transform-origin: 0 0;
+}
+
+.banner-wrap {
+    margin-top: 1.4em;
+}
+
+.banner {
+    color: var(--term-green);
+    text-shadow: var(--glow);
+}
+
+.schematic {
+    margin: 0.8em 0 0;
+}
+
+.schematic .art {
+    color: var(--term-amber);
+}
+
+
+
+/* "powered by"-Zeile */
+
+.tagline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.6em;
+    row-gap: 0.4em;
+    margin: 1.6em 0 2.6em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.fsit,
+.asta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+}
+
+.fsit-brace {
+    background: var(--fs-red);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.1;
+    padding: 0 0.2em;
+}
+
+.pink {
+    color: var(--fs-red);
+}
+
+.asta-icon {
+    display: inline-block;
+    white-space: pre;
+    font-size: 0.2em;
+    line-height: 1.17;
+    text-align: left;
+}
+
+.navy   { color: var(--asta-navy); }
+.orange { color: var(--asta-orange); }
+
+
+
+/*
+    Zeilen "Name ........ Wert". Die Punkte füllen den Platz bis zur Wertspalte
+    und werden auf schmalen Bildschirmen einfach weniger.
+*/
+
+.row {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Wird es eng, schrumpfen zuerst die Punkte (großer shrink-Faktor), erst danach bricht der Wert um */
+.key {
+    display: flex;
+    flex: 0 1000 var(--key-width);
+    white-space: nowrap;
+}
+
+.leader {
+    flex: 1 1 0;
+    width: 0; /* die Punkte zählen nicht zur Mindestbreite, sie füllen nur den freien Platz */
+    min-width: 1ch;
+    margin: 0 1ch;
+    overflow: hidden;
+    color: var(--term-dim);
+}
+
+.leader::before {
+    content: "................................................................................";
+}
+
+.value {
+    flex: 1 1 0; /* nimmt den Rest der Zeile und bricht dort um, so bleibt die Wertspalte gerade */
+}
+
+.status-list {
+    --key-width: 31ch;
+}
+
+.badge {
+    white-space: pre;
+    margin-right: 1ch;
+    flex: none;
+}
+
+.ok      { color: var(--term-green); }
+.warn    { color: var(--term-warn); }
+.spinner { color: var(--term-dim); }
+
+.info {
+    --key-width: 24ch;
+    margin-top: 0.4em;
+}
+
+.hl {
+    color: var(--term-amber);
+    font-weight: bold;
+}
+
+.waiting {
+    color: var(--term-green);
+    font-weight: bold;
+    margin-top: 1.2em !important;
+    text-shadow: var(--glow);
+}
+
+/* Die drei Punkte laufen endlos durch */
+.dots {
+    display: inline-block;
+    width: 3ch;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots 1.6s steps(4, jump-none) infinite;
+}
+
+@keyframes dots {
+    from { width: 0; }
+    to   { width: 3ch; }
+}
+
+
+
+/* Animation: noch nicht "ausgegebene" Zeilen sind unsichtbar, nehmen aber schon Platz ein */
+
+.animate .terminal-body [data-anim]:not(.shown) {
+    visibility: hidden;
+}
+
+.animate .terminal.running {
+    cursor: pointer;
+}
+
+.animate .terminal.running .skip-hint {
+    display: inline;
+}
+
+/* Kurzes Einschalten wie bei einem Röhrenmonitor */
+.animate .terminal {
+    animation: power-on 0.6s ease-out;
+}
+
+@keyframes power-on {
+    0%   { transform: scaleY(0.01); filter: brightness(3); opacity: 0; }
+    40%  { transform: scaleY(0.01); filter: brightness(3); opacity: 1; }
+    100% { transform: scaleY(1);    filter: brightness(1); }
+}
+
+/* Gelegentliches Flackern des Banners */
+.animate .banner.shown {
+    animation: glitch 7s infinite;
+}
+
+@keyframes glitch {
+    /* translate statt transform, das ist schon für die Skalierung belegt */
+    0%, 93%, 100% { translate: none; text-shadow: var(--glow); }
+    94% { translate: -2px 0; text-shadow: 2px 0 var(--fs-red), -2px 0 var(--term-prompt); }
+    96% { translate: 2px 0;  text-shadow: -2px 0 var(--fs-red), 2px 0 var(--term-prompt); }
+    98% { translate: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor,
+    .dots {
+        animation: none;
+    }
+}
+
+/* Links im Terminal */
+
+.terminal a {
+    color: var(--term-prompt);
+    text-underline-offset: 3px;
+}
+
+.term-link {
+    font-weight: bold;
+    padding: 0 0.3ch;
+}
+
+.term-link:hover,
+.term-link:focus-visible {
+    background: var(--term-prompt);
+    color: var(--term-bg) !important;
+    text-decoration: none;
+    outline: none;
+}
+
+.help {
+    margin-top: 0.4em !important;
+}
+
+
+
+/* FAQ-Seite: Text wie eine Markdown-Datei im Terminal */
+
+.doc {
+    margin-top: 0.8em;
+    max-width: 80ch;
+}
+
+.doc h2 {
+    color: var(--term-green);
+    font-size: 1.15em;
+    margin: 0.4em 0 0.2em;
+    text-shadow: var(--glow);
+}
+
+.doc p + p {
+    margin-top: 0.6em;
+}
+
+.dim {
+    color: var(--term-dim);
+    margin-bottom: 0.8em !important;
+}
+
+.faq {
+    border-left: 2px solid var(--term-border);
+    padding-left: 1.5ch;
+    margin-bottom: 0.4em;
+}
+
+.faq[open] {
+    border-left-color: var(--term-green);
+}
+
+.faq summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    padding: 0.15em 0;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::before {
+    content: "[+] ";
+    color: var(--term-green);
+}
+
+.faq[open] summary::before {
+    content: "[-] ";
+}
+
+.faq summary:hover,
+.faq summary:focus-visible {
+    color: var(--term-green);
+    outline: none;
+}
+
+.faq p {
+    padding: 0.2em 0 0.6em 4ch;
+}
+
+/* Checkliste: [ ] und [x] statt echter Kästchen */
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    margin-bottom: 0.7em;
+}
+
+.checklist label {
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checklist input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.box {
+    flex: none;
+    white-space: pre;
+    color: var(--term-dim);
+}
+
+.box::before {
+    content: "[ ] ";
+}
+
+.checklist input:checked + .box {
+    color: var(--term-green);
+}
+
+.checklist input:checked + .box::before {
+    content: "[x] ";
+}
+
+.checklist input:focus-visible + .box {
+    outline: 2px solid var(--term-prompt);
+    outline-offset: 2px;
+}
+
+.checklist label:has(input:checked) {
+    color: var(--term-dim);
+}
+
+.hint {
+    padding-left: 4ch;
+    color: var(--term-fg);
+}
+
+.hint p + p {
+    margin-top: 0.4em;
+}
+
+.code {
+    font-family: var(--mono);
+    font-size: 0.85em;
+    background: var(--term-bar);
+    border: 1px solid var(--term-border);
+    padding: 0.5em 0.8em;
+    margin: 0.4em 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: all; /* ein Klick markiert die ganze URL zum Kopieren */
+}
+
+/* Hardware-Seite: Teileliste mit Anzahl rechtsbündig davor */
+
+.doc h2 + .parts,
+.doc h2 + ul {
+    margin-top: 0.2em;
+}
+
+.parts {
+    list-style: none;
+    margin-bottom: 1.2em;
+}
+
+.parts li {
+    display: flex;
+    gap: 1ch;
+}
+
+.qty {
+    flex: none;
+    width: 4ch;
+    text-align: right;
+    color: var(--term-amber);
+    font-weight: bold;
+}
+
+.parts a {
+    color: var(--term-fg) !important;
+    text-decoration-color: var(--term-border);
+}
+
+.parts a:hover,
+.parts a:focus-visible {
+    color: var(--term-prompt) !important;
+    text-decoration-color: currentColor;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 2ch;
+}
+
+.offers {
+    list-style: none;
+    padding: 0.2em 0 0.6em 4ch;
+}
+
+.offers li {
+    margin-bottom: 0.4em;
+}
+
+.offers li::before {
+    content: "- ";
+    color: var(--term-green);
+}
+
+.progress {
+    margin-top: 1em !important;
+    white-space: pre-wrap;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+
+
+/* Laptop: Infoblock größer, wie auf dem Plakat */
+
+@media (min-width: 760px) {
+
+    .info {
+        font-size: 1.3em;
+    }
+
+}
+
+
+
+/* Handy */
+
+@media (max-width: 600px) {
+
+    .page.hackathon {
+        padding: 8px 16px 32px;
+    }
+
+    .terminal {
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .terminal-bar {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .terminal-title {
+        margin-right: 0;
+        text-align: left;
+        margin-left: 4px;
+    }
+
+    .terminal-body {
+        padding: 16px 12px 20px;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .status-list {
+        --key-width: 21ch;
+    }
+
+    .info {
+        font-size: 1.1em;
+        --key-width: 23ch;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .terminal {
+        font-size: 12px;
+    }
+
+    .info {
+        font-size: 1em;
+    }
+
+}

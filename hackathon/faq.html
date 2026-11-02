@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de" class="dark-mode">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Häufige Fragen und Vorbereitung für den Embedded AI Hackathon der Fachschaft IT.">
+    <meta name="theme-color" content="#0D1117">
+
+    <title>Hackathon FAQ – Fachschaft IT</title>
+
+    <link rel="preload" href="fonts/DejaVuSansMono.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../assets/js/theme.js"></script>
+    <script>
+        // Animation nur mit JavaScript und ohne "Bewegung reduzieren", sonst ist sofort alles sichtbar
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.classList.add("animate");
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- ===== Header: für alle Event-Seiten gleich, nicht ändern ===== -->
+<header class="site-header">
+    <a class="logo" href="../" title="Zur Übersicht">
+        <img class="logo-dark" src="../assets/images/logo_dark.svg" alt="Logo der Fachschaft IT">
+        <img class="logo-light" src="../assets/images/logo_light.svg" alt="Logo der Fachschaft IT">
+    </a>
+
+    <div class="header-actions">
+        <button type="button" class="icon-button" onclick="toggleColorMode()" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+            </svg>
+        </button>
+        <a class="icon-button" href="../" title="Zurück zur Übersicht" aria-label="Zurück zur Übersicht">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+<!-- ===== Ende Header ===== -->
+
+
+<!--
+    FAQ und Vorbereitung zum Hackathon, gleicher Terminal-Look wie index.html.
+    Neue Frage: einen <details class="faq">-Block kopieren.
+    Neuer Punkt für die Checkliste: ein <li> in .checklist kopieren und einen neuen data-key vergeben
+    (Häkchen merkt sich der Browser, siehe faq.js).
+-->
+<main class="page hackathon">
+    <h1 class="visually-hidden">Embedded AI Hackathon: Häufige Fragen und Vorbereitung</h1>
+
+    <div class="terminal">
+        <div class="terminal-bar" aria-hidden="true">
+            <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+            <span class="terminal-title">user@hackathon: ~/faq</span>
+            <span class="skip-hint">Klick = überspringen</span>
+        </div>
+
+        <div class="terminal-body">
+
+            <!-- ===== Häufige Fragen ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">cat FAQ.md</span></p>
+
+            <div class="doc" data-anim="print">
+                <h2># Häufige Fragen</h2>
+                <p class="dim">Klick auf eine Frage, um die Antwort aufzuklappen.</p>
+
+                <details class="faq">
+                    <summary>Brauche ich irgendwelche Skills?</summary>
+                    <p>Nein. Der Hackathon ist auch für <span class="hl">komplette Einsteiger*innen</span> gedacht. Wenn du nicht weiterkommst, helfen dir vor Ort alle gerne weiter.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wie melde ich mich an?</summary>
+                    <p>Gar nicht. <span class="hl">Komm einfach vorbei!</span></p>
+                </details>
+
+                <details class="faq">
+                    <summary>Was ist die Aufgabe?</summary>
+                    <p>Die Aufgabe ist <span class="hl">frei</span>: Ihr baut, was euch Spaß macht. Hauptsache, es steckt ein bisschen Embedded und KI drin. Wenn euch nichts einfällt, geben wir euch vor Ort Denkanstöße.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Muss ich Hardware mitbringen?</summary>
+                    <p>Nein, die Hardware stellen wir: Mikrocontroller wie den <span class="hl">Seeed XIAO ESP32-S3</span>, Sensoren, Displays, Bauteile und Werkzeug. Lötkolben stehen bereit. Was es alles gibt, steht in der <a href="hardware.html">Hardware-Liste</a>. Mitbringen musst du nur deinen <span class="hl">Laptop</span> und ein <span class="hl">USB-C-Datenkabel</span>.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Welche Software brauche ich?</summary>
+                    <p>Das ist euch überlassen. Wir empfehlen die <span class="hl">Arduino IDE</span> oder <span class="hl">PlatformIO</span>. Wie du sie einrichtest, steht unten unter Vorbereitung.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wie bereite ich mich am besten vor?</summary>
+                    <p>Arbeite die Checkliste unten unter <span class="hl">Vorbereitung</span> durch: Laptop und Kabel einpacken, Entwicklungsumgebung installieren und einmal ein Testprogramm kompilieren. Wenn du magst, richtest du dir noch einen KI-Assistenten ein. Dann kannst du am Abend direkt loslegen.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wie groß sind die Teams? Kann ich auch alleine kommen?</summary>
+                    <p>Ihr arbeitet in Teams aus <span class="hl">2-3 Personen</span>. Die Teams bilden wir <span class="hl">vor Ort</span>, du kannst also gerne alleine kommen.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wann und wo genau?</summary>
+                    <p>Am <span class="hl">Freitag, 04.12.2026 ab 18:00 Uhr</span> in den Räumen <span class="hl">F1.-208</span> und <span class="hl">F1.-110</span>. Das Ende ist offen.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wie lange geht der Hackathon?</summary>
+                    <p>Die <span class="hl">ganze Nacht</span>. Jede*r bleibt so lange, wie er oder sie möchte. Unser Schlafplan wurde übrigens auch noch nicht gefunden.</p>
+                </details>
+
+                <details class="faq">
+                    <summary>Was kostet die Teilnahme?</summary>
+                    <p>Für <span class="hl">Snacks und Getränke ist gesorgt</span>. Kosten entstehen höchstens, wenn du eine eigene KI-Lizenz nutzen willst. Keine Lizenz? Kein Problem, als Studierende*r bekommst du einiges kostenlos:</p>
+                    <ul class="offers">
+                        <li><a href="https://gemini.google/de/students/" target="_blank">Google Gemini für Studierende</a>: ein Jahr Google AI Plus kostenlos (Angebot gilt bis 31.12.2026, Zahlungsmethode nötig, danach rechtzeitig kündigen).</li>
+                        <li><a href="https://docs.github.com/de/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank">GitHub Copilot für Studierende</a>: kostenlos nach Verifizierung über <a href="https://education.github.com/" target="_blank">GitHub Education</a>. Die Bestätigung kann ein paar Tage dauern, also rechtzeitig beantragen.</li>
+                        <li>Ohne Verifizierung: <a href="https://github.com/features/copilot/plans" target="_blank">GitHub Copilot Free</a>, <a href="https://cursor.com/pricing" target="_blank">Cursor</a> und JetBrains (<a href="https://www.jetbrains.com/community/education/#students" target="_blank">kostenlose IDEs für Studierende</a>) haben kostenlose Stufen mit Limits.</li>
+                        <li>Für Fragen zwischendurch reichen auch die kostenlosen Versionen von <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>, <a href="https://claude.ai/" target="_blank">Claude</a> oder <a href="https://chat.mistral.ai/" target="_blank">Le Chat</a>.</li>
+                    </ul>
+                </details>
+
+                <details class="faq">
+                    <summary>Ich habe noch eine andere Frage.</summary>
+                    <p>Schreib uns einfach auf <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a> oder sprich uns direkt an.</p>
+                </details>
+            </div>
+
+            <!-- ===== Vorbereitung ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./prepare.sh --checklist</span></p>
+
+            <div class="doc" data-anim="print">
+                <h2># Vorbereitung</h2>
+                <p class="dim">Am besten alles schon vor dem Hackathon erledigen, dann könnt ihr direkt loslegen. Die Häkchen merkt sich dein Browser.</p>
+
+                <ul class="checklist">
+                    <li>
+                        <label><input type="checkbox" data-key="laptop"><span class="box" aria-hidden="true"></span>Laptop und Ladekabel einpacken</label>
+                        <p class="hint">Steckdosen gibt es, eine Mehrfachsteckdose ist aber nie verkehrt.</p>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="cable"><span class="box" aria-hidden="true"></span>USB-C-Datenkabel mitbringen</label>
+                        <p class="hint">Achtung: Viele Kabel können nur laden. Mit so einem Kabel taucht das Board am Laptop gar nicht auf. Hat dein Laptop nur USB-A, brauchst du ein Kabel USB-A auf USB-C.</p>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="ide"><span class="box" aria-hidden="true"></span>Entwicklungsumgebung installieren</label>
+                        <div class="hint">
+                            <p>Welche, ist dir überlassen. Wir empfehlen eine von diesen beiden:</p>
+                            <p><span class="hl">Arduino IDE</span> (am einfachsten für den Einstieg): Download unter <a href="https://www.arduino.cc/en/software" target="_blank">arduino.cc/en/software</a> (Version 2.x).</p>
+                            <p><span class="hl">PlatformIO</span> (für alle, die schon mit VS Code arbeiten): in <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> die Erweiterung <a href="https://platformio.org/install/ide?install=vscode" target="_blank">PlatformIO IDE</a> installieren.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="boards"><span class="box" aria-hidden="true"></span>ESP32-Unterstützung einrichten</label>
+                        <div class="hint">
+                            <p><span class="hl">Arduino IDE:</span> Unter <span class="hl">Datei → Einstellungen</span> (macOS: <span class="hl">Arduino IDE → Settings</span>) bei „Zusätzliche Boardverwalter-URLs“ eintragen:</p>
+                            <pre class="code">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</pre>
+                            <p>Dann im Boardverwalter nach <span class="hl">esp32</span> suchen und das Paket <span class="hl">esp32 by Espressif Systems</span> installieren.</p>
+                            <p><span class="hl">PlatformIO:</span> Ein neues Projekt anlegen, als Board <span class="hl">Seeed Studio XIAO ESP32S3</span> und als Framework <span class="hl">Arduino</span> wählen. In der <span class="hl">platformio.ini</span> steht dann:</p>
+                            <pre class="code">[env:seeed_xiao_esp32s3]
+platform = espressif32
+board = seeed_xiao_esp32s3
+framework = arduino</pre>
+                            <p>Beim ersten Bauen lädt PlatformIO die Toolchain herunter. Das dauert ein paar Minuten, also besser zu Hause im WLAN erledigen.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="blink"><span class="box" aria-hidden="true"></span>Testprogramm kompilieren</label>
+                        <p class="hint"><span class="hl">Arduino IDE:</span> Als Board <span class="hl">XIAO_ESP32S3</span> auswählen, dann <span class="hl">Datei → Beispiele → 01.Basics → Blink</span> öffnen und auf ✓ (Überprüfen) klicken. <span class="hl">PlatformIO:</span> Im neuen Projekt einmal auf ✓ (Build) klicken. Läuft das ohne Fehler durch, ist alles bereit. Ein Board brauchst du dafür noch nicht.</p>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="docs"><span class="box" aria-hidden="true"></span>Optional: Anleitung zum Board überfliegen</label>
+                        <p class="hint">Die <a href="https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/" target="_blank">Getting-Started-Seite von Seeed</a> erklärt Pins und Upload. Tipp: Lässt sich das Board nicht flashen, beim Einstecken die <span class="hl">BOOT</span>-Taste gedrückt halten.</p>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="ai"><span class="box" aria-hidden="true"></span>Optional: KI-Assistent einrichten</label>
+                        <p class="hint">Zum Beispiel Gemini oder GitHub Copilot, beides gibt es für Studierende kostenlos (siehe oben unter „Was kostet die Teilnahme?“). Die Verifizierung bei GitHub kann ein paar Tage dauern, also nicht erst am Abend vorher beantragen.</p>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" data-key="ideas"><span class="box" aria-hidden="true"></span>Optional: Hardware-Liste anschauen und Ideen sammeln</label>
+                        <p class="hint">In der <a href="hardware.html">Hardware-Liste</a> siehst du, welche Sensoren, Displays und Boards es gibt.</p>
+                    </li>
+                </ul>
+
+                <p class="progress" aria-live="polite"><span class="ok">[<span class="bar"></span>]</span> <span class="count"></span></p>
+            </div>
+
+            <!-- ===== Zurück ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">cd ..</span></p>
+            <p class="links" data-anim="print"><a class="term-link" href="./">&lt;- zurück zur Hackathon-Seite</a> <a class="term-link" href="hardware.html">Hardware-Liste -&gt;</a></p>
+
+            <p class="prompt last" data-anim="print"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cursor"></span></p>
+
+        </div>
+    </div>
+</main>
+
+
+<!-- ===== Footer: für alle Seiten gleich, nicht ändern ===== -->
+<footer class="site-footer">
+    <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a>
+    <a href="https://moodle.hs-esslingen.de/moodle/course/view.php?id=26454" target="_blank">Moodle</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="faq.js"></script>
+</body>
+</html>
