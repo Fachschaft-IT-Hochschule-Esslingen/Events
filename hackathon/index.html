@@ -3,12 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Embedded AI Hackathon der Fachschaft IT an der Hochschule Esslingen, 04.12. – 05.12.2026.">
+    <meta name="theme-color" content="#0D1117">
 
     <title>Hackathon – Fachschaft IT</title>
 
+    <link rel="preload" href="fonts/DejaVuSansMono.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="style.css">
     <script src="../assets/js/theme.js"></script>
+    <script>
+        // Animation nur mit JavaScript und ohne "Bewegung reduzieren", sonst ist sofort alles sichtbar
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.classList.add("animate");
+        }
+    </script>
 </head>
 
 <body>
@@ -36,10 +45,116 @@
 <!-- ===== Ende Header ===== -->
 
 
-<main class="page centered">
-    <h1>Hackathon der Fachschaft IT</h1>
-    <p class="highlight">04.12.2026 – 05.12.2026</p>
-    <p>Weitere Infos folgen noch.</p>
+<!--
+    Aufbau wie das Plakat (HackathonPosterWS26_27): ein Terminal mit mehreren Befehlen.
+    Alles mit data-anim wird von script.js der Reihe nach "ausgegeben":
+      type    Prompt-Zeile, der Befehl wird eingetippt
+      print   Block erscheint (ASCII-Grafiken Zeile für Zeile)
+      status  [  OK  ]-Zeile mit kurzem Spinner vorher
+    Ohne JavaScript ist einfach alles sofort sichtbar.
+-->
+<main class="page hackathon">
+    <h1 class="visually-hidden">Embedded AI Hackathon der Fachschaft IT</h1>
+
+    <div class="terminal">
+        <div class="terminal-bar" aria-hidden="true">
+            <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+            <span class="terminal-title">user@hackathon: ~</span>
+            <span class="skip-hint">Klick = überspringen</span>
+        </div>
+
+        <div class="terminal-body">
+
+            <!-- ===== Banner ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./hackathon init --name "Embedded AI Hackathon"</span></p>
+
+            <div class="art-fit banner-wrap">
+                <pre class="art banner" style="--cols: 90" data-anim="print" aria-hidden="true"> /$$   /$$  /$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$ /$$   /$$  /$$$$$$  /$$   /$$
+| $$  | $$ /$$__  $$ /$$__  $$| $$  /$$/ /$$__  $$|__  $$__/| $$  | $$ /$$__  $$| $$$ | $$
+| $$  | $$| $$  \ $$| $$  \__/| $$ /$$/ | $$  \ $$   | $$   | $$  | $$| $$  \ $$| $$$$| $$
+| $$$$$$$$| $$$$$$$$| $$      | $$$$$/  | $$$$$$$$   | $$   | $$$$$$$$| $$  | $$| $$ $$ $$
+| $$__  $$| $$__  $$| $$      | $$  $$  | $$__  $$   | $$   | $$__  $$| $$  | $$| $$  $$$$
+| $$  | $$| $$  | $$| $$    $$| $$\  $$ | $$  | $$   | $$   | $$  | $$| $$  | $$| $$\  $$$
+| $$  | $$| $$  | $$|  $$$$$$/| $$ \  $$| $$  | $$   | $$   | $$  | $$|  $$$$$$/| $$ \  $$
+|__/  |__/|__/  |__/ \______/ |__/  \__/|__/  |__/   |__/   |__/  |__/ \______/ |__/  \__/</pre>
+            </div>
+
+            <div class="tagline" data-anim="print">
+                <span>Embedded AI Hackathon, powered by:</span>
+                <span class="fsit"><span class="fsit-brace">{</span><b>Fachschaft <span class="pink">IT</span>,</b></span><span>sponsored by:</span>
+                <span class="asta"><span class="asta-icon" aria-hidden="true">     <span class="navy">▗▄▖</span>
+   <span class="navy">▗█▀▚</span><span class="orange">▄▖</span>
+  <span class="navy">▟▛</span><span class="orange">▗█▀▄▄</span>
+ <span class="navy">▐▌</span><span class="orange">▗▛▘▟▀</span><span class="navy">▄▄ █</span>
+ <span class="navy">█▌</span><span class="orange">▟▌</span><span class="navy">▟▌▗▛</span>
+ <span class="navy">█▌</span><span class="orange">▜▌</span><span class="navy">▜▌▝▙</span>
+ <span class="navy">▐▘</span><span class="orange">▝</span><span class="navy">▙▖</span><span class="orange">▜▄</span><span class="navy">▀▀</span><span class="orange">██</span>
+  <span class="navy">▜▙▝█▄</span><span class="orange">▀▀</span><span class="navy">▟▄▄</span>
+   <span class="navy">▝█▄▞▀▟▄▄▄</span>
+     <span class="navy">▝▀▚▙▄▄▄</span></span><b><span class="navy">A</span><span class="orange">St</span><span class="navy">A</span></b></span>
+            </div>
+
+            <!-- ===== Status ===== -->
+            <div class="status-list">
+                <p class="row" data-anim="status"><span class="badge">[<span class="ok">  OK  </span>]</span><span class="key"><span>Fachschaft IT</span><span class="leader"></span></span><span class="value">online</span></p>
+                <p class="row" data-anim="status"><span class="badge">[<span class="ok">  OK  </span>]</span><span class="key"><span>18x XIAO ESP32-S3</span><span class="leader"></span></span><span class="value">geflasht</span></p>
+                <p class="row" data-anim="status"><span class="badge">[<span class="ok">  OK  </span>]</span><span class="key"><span>50 Plätze</span><span class="leader"></span></span><span class="value">freigegeben</span></p>
+                <p class="row" data-anim="status"><span class="badge">[<span class="ok">  OK  </span>]</span><span class="key"><span>Lötkolben</span><span class="leader"></span></span><span class="value">vorgeheizt</span></p>
+                <p class="row" data-anim="status"><span class="badge">[<span class="ok">  OK  </span>]</span><span class="key"><span>Kaffeemaschine</span><span class="leader"></span></span><span class="value">vorgeheizt</span></p>
+                <p class="row" data-anim="status"><span class="badge">[<span class="warn"> WARN </span>]</span><span class="key"><span>Schlafplan</span><span class="leader"></span></span><span class="value">nicht gefunden</span></p>
+            </div>
+
+            <!-- ===== Schaltplan ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./schematic --board xiao-esp32s3 air_node.sch</span></p>
+
+            <figure class="art-fit schematic" role="img" aria-label="Schaltplan: XIAO ESP32-S3 mit Gassensor MQ-135 und Umweltsensor BME280">
+                <pre class="art" style="--cols: 100" data-anim="print" aria-hidden="true">   +5V                             +5V   C1 100n              ┌────────────────────────────┐
+    │                             8 ●───┤├─── GND             │ U1 XIAO ESP32-S3           │
+  ┌─┴─────────────┐            ┌────┴────┐                    │ D0  GPIO1              5V  ├─── +5V
+  │ U3 MQ-135     │  R2 10k    │         │       R4           │ D1  GPIO2             GND  ├─── GND
+  │ VCC        AO ├──[████]──●─┤3 +      │              AIR   │ D2  GPIO3             3V3  ├─── +3V3
+  │ GND        DO ├─ nc      │ │   U2A   ├──●──[████]──●──────┤ D3  GPIO4       GPIO9  D10 │
+  └─┬─────────────┘          │┌┤2 -      │  │    1k    │  ┌───┤ D4  SDA         GPIO8   D9 │
+    │                        █│└───┬─────┘  │      C2 ─┴─ │ ┌─┤ D5  SCL         GPIO7   D8 │
+   GND                  R3   █│    │ 4      │    100n ─┬─ │ │ │ D6  TX         GPIO44   D7 │
+                        15k  ││   GND       │          │  │ │ └────────────────────────────┘
+                             │└─────────────┘         GND │ │
+                            GND                           │ │
+                                                          │ │
+                                ┌─────────────────────┐   │ │
+                                │ U4 BME280           │   │ │
+                                │ Druck/Feuchte/Temp  │   │ │
+                         +3V3 ──┤ VCC             SDA ├───┘ │
+                          GND ──┤ GND             SCL ├─────┘
+                                │ I2C 0x76            │
+                                └─────────────────────┘</pre>
+            </figure>
+
+            <!-- ===== Infos ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./hackathon start --teams 2-3</span></p>
+
+            <div class="info">
+                <p class="row" data-anim="print"><span class="key"><span>Datum</span><span class="leader"></span></span><span class="value hl">Fr 04.12. – Sa 05.12.2026</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Start</span><span class="leader"></span></span><span class="value hl">18:00 Uhr</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Ende</span><span class="leader"></span></span><span class="value">open end</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Räume</span><span class="leader"></span></span><span class="value hl">F1.-208, F1.-110</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Spieler</span><span class="leader"></span></span><span class="value">0/50</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Teams</span><span class="leader"></span></span><span class="value">2-3 Personen</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Verpflegung</span><span class="leader"></span></span><span class="value">Kaffee, Snacks &amp; Getränke</span></p>
+                <p class="row" data-anim="print"><span class="key"><span>Herausforderungsgrad</span><span class="leader"></span></span><span class="value hl">Einsteiger&shy;freundlich</span></p>
+
+                <p class="waiting" data-anim="print">&gt;&gt; HACKATHON WAITING FOR PLAYERS<span class="dots">...</span></p>
+            </div>
+
+            <!-- ===== Link zur FAQ ===== -->
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./hackathon --help</span></p>
+            <p class="help" data-anim="print">Fragen? Was muss ich vorbereiten? -&gt; <a class="term-link" href="faq.html">FAQ &amp; Vorbereitung</a></p>
+            <p data-anim="print">Welche Hardware gibt es? ........ -&gt; <a class="term-link" href="hardware.html">Hardware-Liste</a></p>
+
+            <p class="prompt last" data-anim="print"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cursor"></span></p>
+
+        </div>
+    </div>
 </main>
 
 
@@ -49,5 +164,6 @@
     <a href="https://moodle.hs-esslingen.de/moodle/course/view.php?id=26454" target="_blank">Moodle</a>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
