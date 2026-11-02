@@ -433,6 +433,7 @@ html.dark-mode body {
 .doc {
     margin-top: 0.8em;
     max-width: 80ch;
+    overflow-wrap: anywhere; /* lange URLs brechen auf dem Handy um */
 }
 
 .doc h2 {
@@ -616,6 +617,118 @@ html.dark-mode body {
 .offers li::before {
     content: "- ";
     color: var(--term-green);
+}
+
+/* KI-Abschnitt: Warnhinweis und Preisliste */
+
+.alert {
+    border-left: 2px solid var(--term-warn);
+    padding: 0.3em 0 0.3em 1.5ch;
+    margin: 0.8em 0 1em !important;
+}
+
+/* Nummerierte Anleitung (Chat AI) */
+
+.steps {
+    padding-left: 3ch;
+    margin: 0.6em 0 1em;
+}
+
+.steps > li {
+    margin-bottom: 0.9em;
+}
+
+.steps > li::marker {
+    color: var(--term-green);
+    font-weight: bold;
+}
+
+.steps p + p,
+.steps p + .code,
+.steps .code + p {
+    margin-top: 0.4em;
+}
+
+.steps .offers {
+    padding-left: 0;
+}
+
+/* Codeblock mit Kopieren-Button oben rechts */
+
+.code-wrap {
+    position: relative;
+}
+
+/* Die Konfiguration nicht umbrechen, sonst stimmt die YAML-Einrückung optisch nicht mehr; lieber seitlich scrollen */
+.code-wrap .code {
+    user-select: text; /* hier soll man auch Teile markieren können */
+    padding-top: 2.2em;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: auto;
+}
+
+.copy {
+    position: absolute;
+    top: 0.4em;
+    right: 0.4em;
+    font-family: var(--mono);
+    font-size: 0.8em;
+    color: var(--term-green);
+    background: var(--term-bg);
+    border: 1px solid var(--term-border);
+    padding: 0.15em 0.8ch;
+    cursor: pointer;
+}
+
+.copy:hover,
+.copy:focus-visible {
+    border-color: var(--term-green);
+    outline: none;
+}
+
+.prices {
+    --key-width: 22ch;
+    margin: 0.4em 0 0.6em;
+}
+
+/* "Andere Frage": im Pink der Fachschaft statt Terminal-Grün */
+
+.faq.contact[open] {
+    border-left-color: var(--fs-red);
+}
+
+.faq.contact summary::before,
+.faq.contact summary:hover,
+.faq.contact summary:focus-visible {
+    color: var(--fs-red);
+}
+
+.contact-body {
+    padding: 0.4em 0 0.6em 4ch;
+}
+
+.faq .contact-body p {
+    padding: 0;
+}
+
+.contact-body .fsit {
+    font-size: 1.15em;
+    margin-bottom: 0.4em !important;
+}
+
+.contact-list {
+    padding-left: 3ch;
+    margin-top: 0.2em;
+}
+
+.contact-list li {
+    margin-bottom: 0.3em;
+}
+
+.contact-list li::marker {
+    color: var(--fs-red);
+    font-weight: bold;
 }
 
 .progress {

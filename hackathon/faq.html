@@ -97,7 +97,7 @@
 
                 <details class="faq">
                     <summary>Wie bereite ich mich am besten vor?</summary>
-                    <p>Arbeite die Checkliste unten unter <span class="hl">Vorbereitung</span> durch: Laptop und Kabel einpacken, Entwicklungsumgebung installieren und einmal ein Testprogramm kompilieren. Wenn du magst, richtest du dir noch einen KI-Assistenten ein. Dann kannst du am Abend direkt loslegen.</p>
+                    <p>Das Wichtigste zuerst: <span class="hl">Richte dir rechtzeitig einen KI-Assistenten ein.</span> Die kostenlosen Studierenden-Zugänge brauchen bis zu einer Woche, bis sie freigeschaltet sind (siehe <a href="#ki">KI-Assistent einrichten</a>). Danach arbeitest du die Checkliste unter <span class="hl">Vorbereitung</span> durch: Laptop und Kabel einpacken, Entwicklungsumgebung installieren und einmal ein Testprogramm kompilieren. Dann kannst du am Abend direkt loslegen.</p>
                 </details>
 
                 <details class="faq">
@@ -117,18 +117,20 @@
 
                 <details class="faq">
                     <summary>Was kostet die Teilnahme?</summary>
-                    <p>Für <span class="hl">Snacks und Getränke ist gesorgt</span>. Kosten entstehen höchstens, wenn du eine eigene KI-Lizenz nutzen willst. Keine Lizenz? Kein Problem, als Studierende*r bekommst du einiges kostenlos:</p>
-                    <ul class="offers">
-                        <li><a href="https://gemini.google/de/students/" target="_blank">Google Gemini für Studierende</a>: ein Jahr Google AI Plus kostenlos (Angebot gilt bis 31.12.2026, Zahlungsmethode nötig, danach rechtzeitig kündigen).</li>
-                        <li><a href="https://docs.github.com/de/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank">GitHub Copilot für Studierende</a>: kostenlos nach Verifizierung über <a href="https://education.github.com/" target="_blank">GitHub Education</a>. Die Bestätigung kann ein paar Tage dauern, also rechtzeitig beantragen.</li>
-                        <li>Ohne Verifizierung: <a href="https://github.com/features/copilot/plans" target="_blank">GitHub Copilot Free</a>, <a href="https://cursor.com/pricing" target="_blank">Cursor</a> und JetBrains (<a href="https://www.jetbrains.com/community/education/#students" target="_blank">kostenlose IDEs für Studierende</a>) haben kostenlose Stufen mit Limits.</li>
-                        <li>Für Fragen zwischendurch reichen auch die kostenlosen Versionen von <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>, <a href="https://claude.ai/" target="_blank">Claude</a> oder <a href="https://chat.mistral.ai/" target="_blank">Le Chat</a>.</li>
-                    </ul>
+                    <p>Für <span class="hl">Snacks und Getränke ist gesorgt</span>. Kosten entstehen höchstens für einen KI-Assistenten. Keine Lizenz? Kein Problem: Als Studierende*r bekommst du <span class="hl">Chat AI der Academic Cloud</span> (unsere Empfehlung), GitHub Copilot und Gemini kostenlos. Du musst es nur <span class="hl">rechtzeitig beantragen</span>. Alles dazu und was ein Abo sonst kostet, steht unten unter <a href="#ki">KI-Assistent einrichten</a>.</p>
                 </details>
 
-                <details class="faq">
+                <details class="faq contact">
                     <summary>Ich habe noch eine andere Frage.</summary>
-                    <p>Schreib uns einfach auf <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a> oder sprich uns direkt an.</p>
+                    <div class="contact-body">
+                        <p class="fsit"><span class="fsit-brace">{</span><b>Fachschaft <span class="pink">IT</span></b></p>
+                        <p>Frag uns einfach:</p>
+                        <ol class="contact-list">
+                            <li><span class="hl">Komm vorbei</span> und frag uns direkt, wenn unser Raum offen ist.</li>
+                            <li>Schreib uns eine Mail an <a href="mailto:fachschaft.it@hs-esslingen.de">fachschaft.it@hs-esslingen.de</a>.</li>
+                            <li>Oder schreib uns auf <a href="https://www.instagram.com/fachschaft.it" target="_blank">Instagram</a>.</li>
+                        </ol>
+                    </div>
                 </details>
             </div>
 
@@ -179,8 +181,8 @@ framework = arduino</pre>
                         <p class="hint">Die <a href="https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/" target="_blank">Getting-Started-Seite von Seeed</a> erklärt Pins und Upload. Tipp: Lässt sich das Board nicht flashen, beim Einstecken die <span class="hl">BOOT</span>-Taste gedrückt halten.</p>
                     </li>
                     <li>
-                        <label><input type="checkbox" data-key="ai"><span class="box" aria-hidden="true"></span>Optional: KI-Assistent einrichten</label>
-                        <p class="hint">Zum Beispiel Gemini oder GitHub Copilot, beides gibt es für Studierende kostenlos (siehe oben unter „Was kostet die Teilnahme?“). Die Verifizierung bei GitHub kann ein paar Tage dauern, also nicht erst am Abend vorher beantragen.</p>
+                        <label><input type="checkbox" data-key="ai"><span class="box" aria-hidden="true"></span>KI-Assistent einrichten (empfohlen, mind. 1 Woche vorher!)</label>
+                        <p class="hint"><span class="warn">Wichtigster Punkt:</span> Die kostenlosen Zugänge für Studierende brauchen bis zu einer Woche. Unsere Empfehlung ist <span class="hl">Chat AI der Academic Cloud</span> mit der VS-Code-Erweiterung Continue. Die Anleitung mit fertiger Konfiguration steht direkt unten unter <a href="#ki">KI-Assistent einrichten</a>.</p>
                     </li>
                     <li>
                         <label><input type="checkbox" data-key="ideas"><span class="box" aria-hidden="true"></span>Optional: Hardware-Liste anschauen und Ideen sammeln</label>
@@ -189,6 +191,127 @@ framework = arduino</pre>
                 </ul>
 
                 <p class="progress" aria-live="polite"><span class="ok">[<span class="bar"></span>]</span> <span class="count"></span></p>
+            </div>
+
+            <!-- ===== KI-Assistent (Preise und Angebote Stand November 2026, bitte ab und zu prüfen) ===== -->
+            <p class="prompt" id="ki" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./ai-setup --help</span></p>
+
+            <div class="doc" data-anim="print">
+                <h2># KI-Assistent einrichten</h2>
+                <p>Ein KI-Assistent ist beim Hackathon <span class="hl">sehr empfohlen</span>. Er hilft dir beim Programmieren, erklärt Datenblätter und findet Fehler.</p>
+                <p class="alert"><span class="warn">[ WARN ]</span> Die kostenlosen Zugänge für Studierende müssen erst bestätigt werden. Das kann <span class="hl">bis zu einer Woche</span> dauern. Beantrage sie also rechtzeitig! Sonst musst du dir ein Abo kaufen, was aber auch kein Problem ist.</p>
+
+                <h2>## 1. Empfohlen: Chat AI der Academic Cloud</h2>
+                <p><a href="https://chat-ai.academiccloud.de/" target="_blank">Chat AI</a> ist ein KI-Dienst für Hochschulen, betrieben von der GWDG auf Servern in Deutschland. Für Studierende ist er <span class="hl">kostenlos</span>. Mit deinem Hochschulkonto kannst du ihn sofort im Browser nutzen. Mit einem eigenen API-Schlüssel bindest du ihn direkt in VS Code ein, ganz ohne Hin- und Herkopieren.</p>
+
+                <ol class="steps">
+                    <li>
+                        <p><span class="hl">API-Schlüssel beantragen</span> (rechtzeitig!): Auf der Seite des <a href="https://kisski.gwdg.de/en/leistungen/2-02-llm-service" target="_blank">KISSKI LLM Service</a> auf „Book“ klicken und das Formular ausfüllen. Nimm dieselbe E-Mail-Adresse wie bei deinem Academic-Cloud-Konto. Als Zweck kannst du den Hackathon angeben.</p>
+                    </li>
+                    <li>
+                        <p><span class="hl">Schlüssel testen</span>: Im Terminal eingeben (<span class="hl">DEIN_KEY</span> ersetzen). Kommt eine Liste mit Modellen zurück, funktioniert er.</p>
+                        <pre class="code">curl -s https://chat-ai.academiccloud.de/v1/models -H "Authorization: Bearer DEIN_KEY"</pre>
+                    </li>
+                    <li>
+                        <p><span class="hl">Continue installieren</span>: In VS Code mit <span class="hl">Strg+Shift+X</span> die Erweiterungen öffnen, nach <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue" target="_blank">Continue</a> suchen und installieren.</p>
+                    </li>
+                    <li>
+                        <p><span class="hl">Konfiguration einfügen</span>: Im Continue-Panel auf das Zahnrad klicken. Dann öffnet sich die Datei <span class="hl">config.yaml</span> (unter Linux/macOS <span class="hl">~/.continue/config.yaml</span>, unter Windows <span class="hl">%USERPROFILE%\.continue\config.yaml</span>). Ersetze den Inhalt durch die Konfiguration unten, trag bei allen drei Modellen deinen Schlüssel statt <span class="hl">DEIN_KEY</span> ein und speichere.</p>
+                        <div class="code-wrap">
+                            <button type="button" class="copy" data-copy="continue-config">kopieren</button>
+                            <pre class="code" id="continue-config"># Continue-Konfiguration für Chat AI (GWDG)
+name: GWDG Chat AI
+version: 1.0.0
+schema: v1
+
+models:
+  # Coding-Modell: Chat, Code ändern und Autovervollständigung
+  - name: Qwen3 Coder Next (GWDG)
+    provider: openai
+    model: qwen3-coder-next
+    apiBase: https://chat-ai.academiccloud.de/v1
+    apiKey: DEIN_KEY
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+
+  # Großes Modell für schwierige Fragen (langsamer)
+  - name: Qwen 3.5 397B (GWDG)
+    provider: openai
+    model: qwen3.5-397b-a17b
+    apiBase: https://chat-ai.academiccloud.de/v1
+    apiKey: DEIN_KEY
+    roles:
+      - chat
+      - edit
+
+  # Schnelle Alternative mit Denkschritten
+  - name: DeepSeek V4 Flash (GWDG)
+    provider: openai
+    model: deepseek-v4-flash-0731
+    apiBase: https://chat-ai.academiccloud.de/v1
+    apiKey: DEIN_KEY
+    roles:
+      - chat
+      - edit</pre>
+                        </div>
+                        <p class="dim">Lädt Continue die Datei nicht neu, in VS Code einmal <span class="hl">Developer: Reload Window</span> ausführen (Strg+Shift+P).</p>
+                    </li>
+                    <li>
+                        <p><span class="hl">Loslegen</span>: Im Continue-Panel oben das Modell <span class="hl">Qwen3 Coder Next (GWDG)</span> auswählen.</p>
+                        <ul class="offers">
+                            <li><span class="hl">Chat</span>: Fragen im Panel stellen, mit <span class="hl">@</span> hängst du Dateien an.</li>
+                            <li><span class="hl">Strg+L</span>: markierten Code in den Chat schicken.</li>
+                            <li><span class="hl">Strg+I</span>: markierten Code direkt im Editor ändern lassen.</li>
+                            <li><span class="hl">Tab</span>: Vorschlag der Autovervollständigung übernehmen. Die ist bei der GWDG noch Beta. Wenn sie stört, die Zeile <span class="hl">- autocomplete</span> entfernen.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <p class="alert"><span class="warn">[ WARN ]</span> Der Schlüssel gehört nur dir: nicht weitergeben und nicht in ein Git-Repository hochladen. Die <span class="hl">config.yaml</span> liegt außerhalb deiner Projekte, dort ist er sicher.</p>
+                <p class="dim">Welche Modelle es gerade gibt, zeigt der Test aus Schritt 2. Modelle wie <span class="hl">gemma-4-31b-it</span> oder <span class="hl">qwen3.8-27b</span> verstehen auch Bilder, z.B. ein Foto von deinem Steckbrett. Mehr dazu in der <a href="https://docs.hpc.gwdg.de/services/ai-services/coco/index.html" target="_blank">Doku der GWDG</a>.</p>
+
+                <h2>## 2. Weitere kostenlose Zugänge für Studierende</h2>
+                <ul class="offers">
+                    <li><span class="hl">GitHub Copilot</span>: Bei <a href="https://education.github.com/discount_requests/application" target="_blank">GitHub Education</a> als Studierende*r verifizieren (am besten mit Hochschul-Mail und Studienbescheinigung), dann unter <a href="https://github.com/settings/education/benefits" target="_blank">github.com/settings/education/benefits</a> Copilot aktivieren. <a href="https://docs.github.com/de/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank">Anleitung</a></li>
+                    <li><span class="hl">Google Gemini</span>: Ein Jahr Google AI Plus kostenlos über <a href="https://gemini.google/de/students/" target="_blank">gemini.google/de/students</a>. Das Angebot gilt bis 31.12.2026. Du brauchst eine Zahlungsmethode, also danach rechtzeitig kündigen.</li>
+                    <li><span class="hl">Ohne Verifizierung</span>: <a href="https://github.com/features/copilot/plans" target="_blank">Copilot Free</a> und <a href="https://antigravity.google/" target="_blank">Google Antigravity</a> sind kostenlos, haben aber knappere Limits.</li>
+                </ul>
+
+                <h2>## 3. Oder ein Abo kaufen</h2>
+                <p class="dim">Das jeweils übliche Einstiegs-Abo, monatlich kündbar. Stand: November 2026, Dollarpreise zzgl. MwSt.</p>
+                <div class="prices">
+                    <p class="row"><span class="key"><span>GitHub Copilot Pro</span><span class="leader"></span></span><span class="value"><span class="hl">10 $</span> / Monat</span></p>
+                    <p class="row"><span class="key"><span>Claude Pro</span><span class="leader"></span></span><span class="value"><span class="hl">20 $</span> / Monat (17 $ bei Jahresabo), inkl. Claude Code</span></p>
+                    <p class="row"><span class="key"><span>ChatGPT Plus</span><span class="leader"></span></span><span class="value"><span class="hl">ca. 23 €</span> / Monat, inkl. Codex</span></p>
+                    <p class="row"><span class="key"><span>Google AI Pro</span><span class="leader"></span></span><span class="value"><span class="hl">21,99 €</span> / Monat</span></p>
+                </div>
+                <p class="dim">Aktuelle Preise: <a href="https://github.com/features/copilot/plans" target="_blank">Copilot</a>, <a href="https://claude.com/pricing" target="_blank">Claude</a>, <a href="https://chatgpt.com/pricing" target="_blank">ChatGPT</a>, <a href="https://one.google.com/about/google-ai-plans/" target="_blank">Google AI</a>.</p>
+
+                <h2>## 4. Andere KI-Tools in VS Code einrichten</h2>
+                <p class="dim">Klick auf ein Tool für die Anleitung.</p>
+
+                <details class="faq">
+                    <summary>GitHub Copilot (GPT, Claude und Gemini in einem)</summary>
+                    <p>Copilot ist in VS Code schon eingebaut. Unten links auf das Konto-Symbol klicken und <span class="hl">mit GitHub anmelden</span>, danach öffnest du den Chat mit <span class="hl">Strg+Alt+I</span>. Im Chat kannst du zwischen Modellen von OpenAI, Anthropic und Google wählen. Welche verfügbar sind, hängt von deinem Plan ab. <a href="https://code.visualstudio.com/docs/copilot/setup" target="_blank">Anleitung</a></p>
+                </details>
+
+                <details class="faq">
+                    <summary>OpenAI Codex (GPT)</summary>
+                    <p>In VS Code unter Erweiterungen (<span class="hl">Strg+Shift+X</span>) die Erweiterung <a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" target="_blank">Codex</a> von OpenAI installieren, das Codex-Symbol in der Seitenleiste öffnen und <span class="hl">mit deinem ChatGPT-Konto anmelden</span>. Die Erweiterung braucht mindestens ChatGPT Plus. <a href="https://learn.chatgpt.com/docs/codex/ide" target="_blank">Anleitung</a></p>
+                </details>
+
+                <details class="faq">
+                    <summary>Claude Code (Claude)</summary>
+                    <p>In VS Code unter Erweiterungen nach <a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank">Claude Code</a> suchen und installieren. Eine Datei öffnen, oben rechts auf das Claude-Symbol klicken und <span class="hl">mit deinem Claude-Konto anmelden</span>. Du brauchst ein bezahltes Abo, also mindestens Claude Pro. Claude Code gibt es auch fürs Terminal. <a href="https://code.claude.com/docs/en/vs-code" target="_blank">Anleitung</a></p>
+                </details>
+
+                <details class="faq">
+                    <summary>Google Gemini (Antigravity)</summary>
+                    <p>Achtung: Die Gemini-Erweiterung für VS Code (Gemini Code Assist) und die Gemini CLI funktionieren seit Juni 2026 <span class="hl">nicht mehr für private Konten</span>, auch nicht mit Google AI Pro. Google verweist stattdessen auf seinen eigenen Editor <a href="https://antigravity.google/" target="_blank">Antigravity</a>. Den gibt es als App, IDE und CLI. Er ist kostenlos mit wöchentlichen Limits, mit Google AI Pro bekommst du mehr. Alternativ nutzt du Gemini-Modelle über GitHub Copilot.</p>
+                </details>
             </div>
 
             <!-- ===== Zurück ===== -->

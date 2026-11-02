@@ -41,3 +41,22 @@
 
     update();
 })();
+
+
+// "kopieren"-Buttons: kopieren den Text des Codeblocks mit der id aus data-copy
+
+document.querySelectorAll("button.copy").forEach(button => {
+    button.addEventListener("click", () => {
+        const text = document.getElementById(button.dataset.copy).textContent;
+        const done = label => {
+            button.textContent = label;
+            setTimeout(() => { button.textContent = "kopieren"; }, 1500);
+        };
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => done("kopiert ✓"), () => done("markieren + Strg+C"));
+        } else {
+            done("markieren + Strg+C");
+        }
+    });
+});
