@@ -43,6 +43,24 @@
 })();
 
 
+// Link auf eine Frage (z.B. faq.html#anmeldung): Antwort aufklappen, hinscrollen und kurz hervorheben
+
+function openFromHash() {
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+    if (!target || target.tagName !== "DETAILS") return;
+
+    target.open = true;
+    target.scrollIntoView({ block: "start" });
+    target.classList.remove("flash");
+    void target.offsetWidth; // Animation neu starten, falls der Link zweimal geklickt wird
+    target.classList.add("flash");
+}
+
+// Erst nach der Einschalt-Animation scrollen, vorher ist das Terminal noch gestaucht
+setTimeout(openFromHash, document.documentElement.classList.contains("animate") ? 650 : 0);
+window.addEventListener("hashchange", openFromHash);
+
+
 // "kopieren"-Buttons: kopieren den Text des Codeblocks mit der id aus data-copy
 
 document.querySelectorAll("button.copy").forEach(button => {
