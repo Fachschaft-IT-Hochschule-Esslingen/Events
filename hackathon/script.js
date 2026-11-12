@@ -38,7 +38,7 @@
     const terminal = document.querySelector(".terminal");
     const steps = Array.from(document.querySelectorAll(".terminal-body [data-anim]"));
 
-    let skipped = false;
+    let skipped = location.hash !== ""; // Sprung auf einen Abschnitt: Inhalt sofort zeigen
     let wakeUp = null;
     const running = []; // Zeilen-Animationen, die beim Überspringen sofort fertig werden
 

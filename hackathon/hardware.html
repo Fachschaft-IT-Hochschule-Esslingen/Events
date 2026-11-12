@@ -48,6 +48,7 @@
 <!--
     Hardware-Liste, erzeugt aus Hackathon_Bestellliste_v3.xlsx (ohne Preise).
     Neues Teil: ein <li> in der passenden Kategorie kopieren, Anzahl, Link und Name anpassen.
+    Der [doku]-Link ist optional. Der CSV-Export (hardware.js) liest die Liste direkt von dieser Seite.
 -->
 <main class="page hackathon">
     <h1 class="visually-hidden">Embedded AI Hackathon: bereitgestellte Hardware</h1>
@@ -65,33 +66,33 @@
 
             <div class="doc" data-anim="print">
                 <p>Die ganze Hardware stellen wir. Du musst nichts kaufen, bring einfach deinen Laptop und ein USB-C-Datenkabel mit. Lötkolben stehen bereit.</p>
-                <p class="dim">Die Links führen zu den Shops, falls du dir ein Teil vorher genauer anschauen willst. Stand: Bestellliste, kleine Änderungen sind noch möglich.</p>
+                <p class="dim">Der Name führt zum Shop, <span class="doku-sample">[doku]</span> zu Anleitung oder Datenblatt. Stand: Bestellliste, kleine Änderungen sind noch möglich.</p>
 
                 <h2>## Mikrocontroller &amp; Boards</h2>
                 <ul class="parts">
-                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/dfrobot-esp32-s3-lorawan-board-sx1262-0-96-display-tasten-i2c-wifi-bluetooth-16dbm-137dbm" target="_blank">DFRobot ESP32-S3 LoRaWAN Board mit 0,96&quot; Farbdisplay (160x80), Tasten, I2C, SX1262 LoRa 868 MHz, USB-C</a></li>
-                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/esp32-nodemcu-development-board" target="_blank">ESP32 NodeMCU Development Board, 38 Pins, WROOM-32, CP2102, Micro-USB, ungelötet</a></li>
-                    <li><span class="qty">10x</span><a href="https://www.berrybase.de/microchip-attiny85v-20pu-avr-mikrocontroller-i2c-spi-2-timer-8-bit-6-pwm-kanaele-20mhz-2.7-5.5vdc" target="_blank">ATtiny85V-20PU, DIP-8</a></li>
-                    <li><span class="qty">4x</span><a href="https://www.berrybase.de/seeed-xiao-esp32-c6-wi-fi-6-ble-5.0-zigbee-thread-512kb-sram-4mb-flash-uart-spi-risc-v-019f466b67fa700690e84a8dff9cbf19" target="_blank">Seeed XIAO ESP32-C6 (Wi-Fi 6, BLE 5, Zigbee, Thread), mit Header</a></li>
-                    <li><span class="qty">10x</span><a href="https://www.digikey.de/de/products/detail/seeed-technology-co-ltd/113991114/19285530" target="_blank">Seeed XIAO ESP32-S3 (ohne Kamera), ohne verlötete Header – Basisboard</a></li>
-                    <li><span class="qty">8x</span><a href="https://www.digikey.de/de/products/result?keywords=113991115" target="_blank">Seeed XIAO ESP32-S3 Sense (Kamera OV3660 + Mikrofon)</a></li>
-                    <li><span class="qty">1x</span><a href="https://www.digikey.de/de/products/result?keywords=103030356" target="_blank">Seeed XIAO Expansion Board (OLED, RTC, Buzzer, microSD, 2x Grove-I2C)</a></li>
+                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/dfrobot-esp32-s3-lorawan-board-sx1262-0-96-display-tasten-i2c-wifi-bluetooth-16dbm-137dbm" target="_blank">DFRobot ESP32-S3 LoRaWAN Board mit 0,96&quot; Farbdisplay (160x80), Tasten, I2C, SX1262 LoRa 868 MHz, USB-C</a> <a class="doku" href="https://wiki.dfrobot.com/SKU_DFR1195_LoRaWAN_ESP32_S3" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/esp32-nodemcu-development-board" target="_blank">ESP32 NodeMCU Development Board, 38 Pins, WROOM-32, CP2102, Micro-USB, ungelötet</a> <a class="doku" href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">10x</span><a href="https://www.berrybase.de/microchip-attiny85v-20pu-avr-mikrocontroller-i2c-spi-2-timer-8-bit-6-pwm-kanaele-20mhz-2.7-5.5vdc" target="_blank">ATtiny85V-20PU, DIP-8</a> <a class="doku" href="https://www.microchip.com/en-us/product/attiny85" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">4x</span><a href="https://www.berrybase.de/seeed-xiao-esp32-c6-wi-fi-6-ble-5.0-zigbee-thread-512kb-sram-4mb-flash-uart-spi-risc-v-019f466b67fa700690e84a8dff9cbf19" target="_blank">Seeed XIAO ESP32-C6 (Wi-Fi 6, BLE 5, Zigbee, Thread), mit Header</a> <a class="doku" href="https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">10x</span><a href="https://www.digikey.de/de/products/detail/seeed-technology-co-ltd/113991114/19285530" target="_blank">Seeed XIAO ESP32-S3 (ohne Kamera), ohne verlötete Header – Basisboard</a> <a class="doku" href="https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">8x</span><a href="https://www.digikey.de/de/products/result?keywords=113991115" target="_blank">Seeed XIAO ESP32-S3 Sense (Kamera OV3660 + Mikrofon)</a> <a class="doku" href="https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">1x</span><a href="https://www.digikey.de/de/products/result?keywords=103030356" target="_blank">Seeed XIAO Expansion Board (OLED, RTC, Buzzer, microSD, 2x Grove-I2C)</a> <a class="doku" href="https://wiki.seeedstudio.com/Seeeduino-XIAO-Expansion-Board/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Sensoren</h2>
                 <ul class="parts">
-                    <li><span class="qty">4x</span><a href="https://www.berrybase.de/dht22-digitaler-temperatur-und-luftfeuchtessensor-mit-breakout-board-jumperkabeln-f-f" target="_blank">DHT22 Temperatur/Feuchte mit Breakout + Kabel</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/bh1750-digitaler-lichtsensor" target="_blank">BH1750 Lichtsensor (I2C)</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/mq-135-gassensor-mit-analogem-und-digitalem-ausgang" target="_blank">MQ-135 Gassensor (5 V, analog + digital)</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/ds18b20-ic-digitaler-temperatursensor" target="_blank">DS18B20 Temperatursensor (nackter IC)</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/apds-9960-rgb-infrarot-gestensensor" target="_blank">APDS-9960 Gesten-/Farbsensor (I2C, 3,3 V)</a></li>
-                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/ky-018-ldr-fotowiderstands-modul-mit-analogem-ausgang" target="_blank">KY-018 Fotowiderstand-Modul, analog</a></li>
-                    <li><span class="qty">5x</span><a href="https://funduino.com/en/products/motion-detector-pir-sensor-hc-sr501" target="_blank">HC-SR501 PIR-Bewegungsmelder, 3–7 m, 140°, 5 V</a></li>
-                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/mpu-6050-module-triaxial-accelerometer-gyroscope" target="_blank">Beschleunigung + Gyroskop MPU-6050, 6 Achsen, I2C, 3–5 V</a></li>
-                    <li><span class="qty">1x</span><a href="https://funduino.com/en/products/gy-530-vl53l0x-time-of-flight-tof-sensor" target="_blank">Laser-Abstandssensor VL53L0X (ToF, bis 2 m), I2C</a></li>
-                    <li><span class="qty">3x</span><a href="https://funduino.com/en/products/gy-bme280-air-pressure-humidity-temperature-sensor-i2c-spi" target="_blank">BME280 Luftdruck + Feuchte + Temperatur, I2C</a></li>
-                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/max30102-heart-rate-sensor-and-spo2-blood-oxygen-sensor-module" target="_blank">MAX30102 Puls + Blutsauerstoff (SpO2), I2C</a></li>
-                    <li><span class="qty">1x</span><a href="https://funduino.com/en/products/gy-33-tcs34725-color-sensor-module-replaces-tcs230-tcs3200" target="_blank">Farbsensor TCS34725 (GY-33), RGB, I2C, 3,3–5 V</a></li>
+                    <li><span class="qty">4x</span><a href="https://www.berrybase.de/dht22-digitaler-temperatur-und-luftfeuchtessensor-mit-breakout-board-jumperkabeln-f-f" target="_blank">DHT22 Temperatur/Feuchte mit Breakout + Kabel</a> <a class="doku" href="https://learn.adafruit.com/dht" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/bh1750-digitaler-lichtsensor" target="_blank">BH1750 Lichtsensor (I2C)</a> <a class="doku" href="https://learn.adafruit.com/adafruit-bh1750-ambient-light-sensor" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/mq-135-gassensor-mit-analogem-und-digitalem-ausgang" target="_blank">MQ-135 Gassensor (5 V, analog + digital)</a> <a class="doku" href="https://www.olimex.com/Products/Components/Sensors/Gas/SNS-MQ135/resources/SNS-MQ135.pdf" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/ds18b20-ic-digitaler-temperatursensor" target="_blank">DS18B20 Temperatursensor (nackter IC)</a> <a class="doku" href="https://www.analog.com/en/products/ds18b20.html" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/apds-9960-rgb-infrarot-gestensensor" target="_blank">APDS-9960 Gesten-/Farbsensor (I2C, 3,3 V)</a> <a class="doku" href="https://www.broadcom.com/products/optical-sensors/integrated-ambient-light-and-proximity-sensors/apds-9960" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/ky-018-ldr-fotowiderstands-modul-mit-analogem-ausgang" target="_blank">KY-018 Fotowiderstand-Modul, analog</a> <a class="doku" href="https://sensorkit.joy-it.net/de/sensors/ky-018" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">5x</span><a href="https://funduino.com/en/products/motion-detector-pir-sensor-hc-sr501" target="_blank">HC-SR501 PIR-Bewegungsmelder, 3–7 m, 140°, 5 V</a> <a class="doku" href="https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/mpu-6050-module-triaxial-accelerometer-gyroscope" target="_blank">Beschleunigung + Gyroskop MPU-6050, 6 Achsen, I2C, 3–5 V</a> <a class="doku" href="https://learn.adafruit.com/mpu6050-6-dof-accelerometer-and-gyro" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">1x</span><a href="https://funduino.com/en/products/gy-530-vl53l0x-time-of-flight-tof-sensor" target="_blank">Laser-Abstandssensor VL53L0X (ToF, bis 2 m), I2C</a> <a class="doku" href="https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">3x</span><a href="https://funduino.com/en/products/gy-bme280-air-pressure-humidity-temperature-sensor-i2c-spi" target="_blank">BME280 Luftdruck + Feuchte + Temperatur, I2C</a> <a class="doku" href="https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/max30102-heart-rate-sensor-and-spo2-blood-oxygen-sensor-module" target="_blank">MAX30102 Puls + Blutsauerstoff (SpO2), I2C</a> <a class="doku" href="https://www.analog.com/en/products/max30102.html" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">1x</span><a href="https://funduino.com/en/products/gy-33-tcs34725-color-sensor-module-replaces-tcs230-tcs3200" target="_blank">Farbsensor TCS34725 (GY-33), RGB, I2C, 3,3–5 V</a> <a class="doku" href="https://learn.adafruit.com/adafruit-color-sensors" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Eingabe: Taster, Touch, Drehregler</h2>
@@ -99,65 +100,65 @@
                     <li><span class="qty">8x</span><a href="https://www.berrybase.de/en/ttp223-capacitive-touch-sensor-push-button" target="_blank">TTP223 Touch-Taster (kapazitiv)</a></li>
                     <li><span class="qty">6x</span><a href="https://www.berrybase.de/en/sw-420-vibration-sensor-module" target="_blank">SW-420 Vibrationssensor</a></li>
                     <li><span class="qty">40x</span><a href="https://www.berrybase.de/mikro-drucktaster-12mm-rund-printmontage-schliesser" target="_blank">Mikro-Drucktaster 12 mm, breadboardtauglich</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/soldered-rotary-encoder-breakout-attiny404-drehgeber-signaluebersetzung-i2c-qwiic" target="_blank">Soldered Drehgeber-Breakout, I2C</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/soldered-rotary-encoder-breakout-attiny404-drehgeber-signaluebersetzung-i2c-qwiic" target="_blank">Soldered Drehgeber-Breakout, I2C</a> <a class="doku" href="https://docs.soldered.com/rotary-encoder/overview/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">20x</span><a href="https://www.berrybase.de/drehpotentiometer-10ko-vertikal-mono-6mm-printmontage" target="_blank">Drehpotentiometer 10 kΩ linear, vertikal, 6-mm-Achse, RM 2,54 (R9011)</a></li>
                 </ul>
 
                 <h2>## Anzeigen, LEDs &amp; Audio</h2>
                 <ul class="parts">
-                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/2.13-250-122-epaper-display-hat-fuer-raspberry-pi" target="_blank">Waveshare 2.13&quot; E-Paper HAT 250x122 (mit SPI-Kabel)</a></li>
-                    <li><span class="qty">8x</span><a href="https://www.berrybase.de/7-segment-led-display-modul-i2c-schnittstelle-tm1637-14mm-rot" target="_blank">7-Segment-Anzeige 4-stellig, 14 mm, TM1637 (2-Draht, kein echtes I2C), rot</a></li>
-                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/berrybase-max7219-punktmatrix-modul-display-8x8-led-matrix-spi-schnittstelle-5v" target="_blank">MAX7219 8x8-LED-Matrix-Modul (fertig mit Treiber)</a></li>
+                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/2.13-250-122-epaper-display-hat-fuer-raspberry-pi" target="_blank">Waveshare 2.13&quot; E-Paper HAT 250x122 (mit SPI-Kabel)</a> <a class="doku" href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">8x</span><a href="https://www.berrybase.de/7-segment-led-display-modul-i2c-schnittstelle-tm1637-14mm-rot" target="_blank">7-Segment-Anzeige 4-stellig, 14 mm, TM1637 (2-Draht, kein echtes I2C), rot</a> <a class="doku" href="https://github.com/avishorp/TM1637" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/berrybase-max7219-punktmatrix-modul-display-8x8-led-matrix-spi-schnittstelle-5v" target="_blank">MAX7219 8x8-LED-Matrix-Modul (fertig mit Treiber)</a> <a class="doku" href="https://www.analog.com/en/products/max7219.html" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">3x</span><a href="https://www.berrybase.de/5mm-led-set-70-stueck" target="_blank">5mm-LED-Set, 70 Stück, diverse Farben</a></li>
-                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/neopixel-stick-mit-8-ws2812-5050-rgb-leds" target="_blank">NeoPixel Stick 8x WS2812</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/adafruit-i2s-amplifier-bff-fuer-qt-py-und-xiao-max98357-3-watt-verstaerker-gpio-stereo" target="_blank">Adafruit I2S-Verstärker BFF für XIAO, MAX98357, 3 W</a></li>
+                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/neopixel-stick-mit-8-ws2812-5050-rgb-leds" target="_blank">NeoPixel Stick 8x WS2812</a> <a class="doku" href="https://learn.adafruit.com/adafruit-neopixel-uberguide" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/adafruit-i2s-amplifier-bff-fuer-qt-py-und-xiao-max98357-3-watt-verstaerker-gpio-stereo" target="_blank">Adafruit I2S-Verstärker BFF für XIAO, MAX98357, 3 W</a> <a class="doku" href="https://learn.adafruit.com/i2s-amplifier-bff" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">2x</span><a href="https://www.berrybase.de/mono-gehaeuselautsprecher-3w-4-ohm" target="_blank">Mono-Gehäuselautsprecher 3 W, 4 Ohm</a></li>
-                    <li><span class="qty">7x</span><a href="https://funduino.com/en/products/oled-0-96-128x64-gvss-i2c" target="_blank">OLED 0.96&quot; 128x64, SSD1306, I2C</a></li>
-                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/oled-0-91-128x32-white-lettering-gvss-i2c" target="_blank">OLED 0.91&quot; 128x32, I2C</a></li>
+                    <li><span class="qty">7x</span><a href="https://funduino.com/en/products/oled-0-96-128x64-gvss-i2c" target="_blank">OLED 0.96&quot; 128x64, SSD1306, I2C</a> <a class="doku" href="https://learn.adafruit.com/monochrome-oled-breakouts" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/oled-0-91-128x32-white-lettering-gvss-i2c" target="_blank">OLED 0.91&quot; 128x32, I2C</a> <a class="doku" href="https://learn.adafruit.com/monochrome-oled-breakouts" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Funk, RFID &amp; NFC</h2>
                 <ul class="parts">
-                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/rfid-nfc-schluesselanhaenger-13-56mhz-1kb" target="_blank">RFID/NFC-Schlüsselanhänger 13,56 MHz, 1 KB</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/433mhz-sender-empfaenger-superregeneration-modul-fs1000a-xy-fst-xy-mk-5v" target="_blank">433-MHz-Sender + Empfänger FS1000A</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/sonoff-snzb-01p-smart-wireless-switch-wandtaster-zigbee-runde-ausfuehrung" target="_blank">Sonoff SNZB-01P Funk-Taster, Zigbee 3.0 (CR2477)</a></li>
-                    <li><span class="qty">6x</span><a href="https://funduino.com/en/products/rfid-kit-with-mifare-rc522-receiver" target="_blank">RFID-Kit RC522 (MFRC522, SPI), Stiftleiste verlötet</a></li>
-                    <li><span class="qty">20x</span><a href="https://funduino.com/en/products/rfid-tag-sticker-25mm-nfc-tag213" target="_blank">NFC-Sticker NTAG213, Ø 25 mm, selbstklebend</a></li>
+                    <li><span class="qty">3x</span><a href="https://www.berrybase.de/rfid-nfc-schluesselanhaenger-13-56mhz-1kb" target="_blank">RFID/NFC-Schlüsselanhänger 13,56 MHz, 1 KB</a> <a class="doku" href="https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/433mhz-sender-empfaenger-superregeneration-modul-fs1000a-xy-fst-xy-mk-5v" target="_blank">433-MHz-Sender + Empfänger FS1000A</a> <a class="doku" href="https://www.airspayce.com/mikem/arduino/RadioHead/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/sonoff-snzb-01p-smart-wireless-switch-wandtaster-zigbee-runde-ausfuehrung" target="_blank">Sonoff SNZB-01P Funk-Taster, Zigbee 3.0 (CR2477)</a> <a class="doku" href="https://sonoff.tech/product/gateway-and-sensors/snzb-01p/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">6x</span><a href="https://funduino.com/en/products/rfid-kit-with-mifare-rc522-receiver" target="_blank">RFID-Kit RC522 (MFRC522, SPI), Stiftleiste verlötet</a> <a class="doku" href="https://github.com/miguelbalboa/rfid" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">20x</span><a href="https://funduino.com/en/products/rfid-tag-sticker-25mm-nfc-tag213" target="_blank">NFC-Sticker NTAG213, Ø 25 mm, selbstklebend</a> <a class="doku" href="https://www.nxp.com/docs/en/data-sheet/NTAG213_215_216.pdf" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Bus, Erweiterungen &amp; Wandler</h2>
                 <ul class="parts">
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/tca9548a-i2c-multiplexer-breakout-board" target="_blank">TCA9548A I2C-Multiplexer, 8 Kanäle</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/ina219-stromsensor-mit-breakoutboard" target="_blank">INA219 Strom-/Spannungssensor (I2C)</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/waveshare-mcp23017-io-erweiterungsplatine-16-digitale-io-ph2.0-oder-loetpads-i2c-3-3v-5v" target="_blank">Waveshare MCP23017 IO-Board, 16 I/O, I2C, 3,3/5 V, bis 8 Stück kaskadierbar</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/pcf8591-ad-da-konverter-modul" target="_blank">PCF8591-Modul: 4x ADC + 1x DAC, 8 Bit, I2C</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/mcp4725-dac-digital-analog-wandler-breakout-board-i2c" target="_blank">MCP4725 DAC-Modul, 12 Bit, I2C</a></li>
-                    <li><span class="qty">8x</span><a href="https://funduino.com/en/products/bidirectional-logic-level-converter-5v-to-3-3v-and-3-3v-to-5v-for-arduino" target="_blank">Pegelwandler bidirektional, 4 Kanäle, 3,3 V ↔ 5 V (MOSFET, I2C/SPI-tauglich)</a></li>
-                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/rtc-module-ds3231-with-i2c-interface" target="_blank">Echtzeituhr DS3231 (RTC, ±2 ppm), I2C, 3,3–5,5 V</a></li>
-                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/pcf8574-8-bit-io-expansion-board-digitaler-i-o-expander" target="_blank">PCF8574 IO-Expander-Modul, 8 I/O, I2C, 2,5–5,5 V</a></li>
-                    <li><span class="qty">2x</span><a href="https://www.digikey.de/de/products/result?keywords=24LC256-I%2FP" target="_blank">24LC256 I2C-EEPROM 256 kbit, DIP-8 (24LC256-I/P)</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/tca9548a-i2c-multiplexer-breakout-board" target="_blank">TCA9548A I2C-Multiplexer, 8 Kanäle</a> <a class="doku" href="https://www.ti.com/product/TCA9548A" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/ina219-stromsensor-mit-breakoutboard" target="_blank">INA219 Strom-/Spannungssensor (I2C)</a> <a class="doku" href="https://www.ti.com/product/INA219" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/waveshare-mcp23017-io-erweiterungsplatine-16-digitale-io-ph2.0-oder-loetpads-i2c-3-3v-5v" target="_blank">Waveshare MCP23017 IO-Board, 16 I/O, I2C, 3,3/5 V, bis 8 Stück kaskadierbar</a> <a class="doku" href="https://www.waveshare.com/wiki/MCP23017_IO_Expansion_Board" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/pcf8591-ad-da-konverter-modul" target="_blank">PCF8591-Modul: 4x ADC + 1x DAC, 8 Bit, I2C</a> <a class="doku" href="https://www.nxp.com/docs/en/data-sheet/PCF8591.pdf" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/mcp4725-dac-digital-analog-wandler-breakout-board-i2c" target="_blank">MCP4725 DAC-Modul, 12 Bit, I2C</a> <a class="doku" href="https://www.microchip.com/en-us/product/mcp4725" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">8x</span><a href="https://funduino.com/en/products/bidirectional-logic-level-converter-5v-to-3-3v-and-3-3v-to-5v-for-arduino" target="_blank">Pegelwandler bidirektional, 4 Kanäle, 3,3 V ↔ 5 V (MOSFET, I2C/SPI-tauglich)</a> <a class="doku" href="https://learn.sparkfun.com/tutorials/bi-directional-logic-level-converter-hookup-guide" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/rtc-module-ds3231-with-i2c-interface" target="_blank">Echtzeituhr DS3231 (RTC, ±2 ppm), I2C, 3,3–5,5 V</a> <a class="doku" href="https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://funduino.com/en/products/pcf8574-8-bit-io-expansion-board-digitaler-i-o-expander" target="_blank">PCF8574 IO-Expander-Modul, 8 I/O, I2C, 2,5–5,5 V</a> <a class="doku" href="https://www.ti.com/product/PCF8574" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.digikey.de/de/products/result?keywords=24LC256-I%2FP" target="_blank">24LC256 I2C-EEPROM 256 kbit, DIP-8 (24LC256-I/P)</a> <a class="doku" href="https://www.microchip.com/en-us/product/24LC256" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Stromversorgung &amp; Akkus</h2>
                 <ul class="parts">
-                    <li><span class="qty">6x</span><a href="https://www.berrybase.de/lp-401230-lithium-polymer-lipo-akku-3-7v-100mah-mit-2-pin-jst-stecker" target="_blank">LiPo 3,7 V 100 mAh, JST-PH 2.0, mit Schutzschaltung (LP-401230)</a></li>
+                    <li><span class="qty">6x</span><a href="https://www.berrybase.de/lp-401230-lithium-polymer-lipo-akku-3-7v-100mah-mit-2-pin-jst-stecker" target="_blank">LiPo 3,7 V 100 mAh, JST-PH 2.0, mit Schutzschaltung (LP-401230)</a> <a class="doku" href="https://learn.adafruit.com/li-ion-and-lipoly-batteries" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">5x</span><a href="https://www.berrybase.de/verlaengerungskabel-2-pin-jst-ph-2.0mm-stecker-buchse-awg24-50cm" target="_blank">JST-PH-2.0-Kabel 2-polig, Stecker-Buchse, 50 cm</a></li>
-                    <li><span class="qty">6x</span><a href="https://www.berrybase.de/superfire-18650-akku-li-ion-2300-mah-3-7-v-pcb-geschuetzt" target="_blank">Li-Ion-Akku 18650, 3,7 V, 2300 mAh, mit Schutzschaltung (Superfire)</a></li>
+                    <li><span class="qty">6x</span><a href="https://www.berrybase.de/superfire-18650-akku-li-ion-2300-mah-3-7-v-pcb-geschuetzt" target="_blank">Li-Ion-Akku 18650, 3,7 V, 2300 mAh, mit Schutzschaltung (Superfire)</a> <a class="doku" href="https://learn.adafruit.com/li-ion-and-lipoly-batteries" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">6x</span><a href="https://www.berrybase.de/batteriehalter-fuer-1x-18650-mit-anschlusskabel-und-jst-ph-2.0-steckverbinder" target="_blank">Batteriehalter 1x 18650 mit Kabel und JST-PH-2.0-Stecker</a></li>
-                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/adafruit-usb-type-c-power-delivery-breakout-24-impulse-umdrehung-i2c-jumper-bis-20v" target="_blank">Adafruit USB-C Power Delivery Breakout HUSB238 (5/9/12/15/18/20 V, bis 5 A, per Jumper oder I2C)</a></li>
+                    <li><span class="qty">5x</span><a href="https://www.berrybase.de/adafruit-usb-type-c-power-delivery-breakout-24-impulse-umdrehung-i2c-jumper-bis-20v" target="_blank">Adafruit USB-C Power Delivery Breakout HUSB238 (5/9/12/15/18/20 V, bis 5 A, per Jumper oder I2C)</a> <a class="doku" href="https://learn.adafruit.com/adafruit-husb238-usb-type-c-power-delivery-breakout" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">1x</span><a href="https://funduino.com/en/products/parallel-1s-lipo-charging-board-fuse-rating-1-5a" target="_blank">1S-LiPo-Ladeboard, 4 Zellen parallel, USB-C, 1 A je Zelle</a></li>
                 </ul>
 
                 <h2>## Bauteile</h2>
                 <ul class="parts">
-                    <li><span class="qty">30x</span><a href="https://www.berrybase.de/1n4001-gleichrichterdiode-tht-50v-1a-do41" target="_blank">1N4001 Gleichrichterdiode</a></li>
-                    <li><span class="qty">30x</span><a href="https://www.berrybase.de/1n4148-schaltdiode-tht-100v-300ma-do35" target="_blank">1N4148 Schaltdiode</a></li>
+                    <li><span class="qty">30x</span><a href="https://www.berrybase.de/1n4001-gleichrichterdiode-tht-50v-1a-do41" target="_blank">1N4001 Gleichrichterdiode</a> <a class="doku" href="https://www.vishay.com/en/product/88503/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">30x</span><a href="https://www.berrybase.de/1n4148-schaltdiode-tht-100v-300ma-do35" target="_blank">1N4148 Schaltdiode</a> <a class="doku" href="https://www.vishay.com/en/product/81857/" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">50x</span><a href="https://www.berrybase.de/keramikkondensator-100nf-50v-10-tht-2-54mm" target="_blank">Keramik 100 nF, 50 V</a></li>
                     <li><span class="qty">1x</span><a href="https://funduino.com/en/products/resistor-set-2600-pcs-130-values-20-pcs-each-1-4-w-0-25-w-1" target="_blank">Widerstandssortiment 2600 Stk., 130 Werte à 20 Stk., 1/4 W, 1 %, Sortierbox</a></li>
                     <li><span class="qty">3x</span><a href="https://funduino.com/en/products/100-resistors-20-each-100-ohms-200-ohms-330-ohms-1k-ohms-10k-ohms" target="_blank">Nachfüllpack Widerstände, 100 Stk.: je 20× 100 Ω, 200 Ω, 330 Ω, 1 kΩ, 10 kΩ (lose, ohne Box)</a></li>
                     <li><span class="qty">2x</span><a href="https://funduino.com/en/products/master-component-set-1390-piece-diodes-resistors-transistors-capacitors" target="_blank">Bauteilsortiment 1390 Stk.: LEDs, Widerstände, Elkos, Keramik-Kondensatoren, Transistoren, Dioden</a></li>
                     <li><span class="qty">1x</span><a href="https://funduino.com/en/products/electrolytic-capacitor-set-0-1uf-220uf-200-pieces" target="_blank">Elko-Set 200 Stk., 10 Werte (1–220 µF) à 20 Stk., 25/50 V, radial</a></li>
-                    <li><span class="qty">10x</span><a href="https://funduino.com/en/products/master-lm358n-lm358p-operational-amplifier" target="_blank">LM358 Doppel-OpAmp, DIP-8, 3–32 V</a></li>
+                    <li><span class="qty">6x</span><a href="https://funduino.com/en/products/master-lm358n-lm358p-operational-amplifier" target="_blank">LM358 Doppel-OpAmp, DIP-8, 3–32 V</a> <a class="doku" href="https://www.ti.com/product/LM358" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                 </ul>
 
                 <h2>## Aufbau &amp; Verkabelung</h2>
@@ -187,11 +188,15 @@
                     <li><span class="qty">1x</span><a href="https://www.berrybase.de/goobay-tools-praezisionsschraubendreher-set-7-tlg.-cv-stahl-flach-und-kreuzschlitz-box" target="_blank">Goobay Präzisions-Schraubendreher 7-tlg. (Schlitz 2/3 mm, PH0/PH1, T6/T8/T10)</a></li>
                     <li><span class="qty">1x</span><a href="https://www.berrybase.de/schrumpfschlauch-set-560-teilig-in-sortimentsbox-rot-schwarz" target="_blank">Schrumpfschlauch-Set 560-teilig, rot/schwarz</a></li>
                     <li><span class="qty">5x</span><a href="https://funduino.com/en/products/precision-tweezers-nonmagnetic-hrc40-esd17" target="_blank">Präzisionspinzette ESD17, gebogene Spitze, antimagnetisch</a></li>
-                    <li><span class="qty">1x</span><a href="https://www.digikey.de/de/products/result?keywords=TOL-18627" target="_blank">USB Logic Analyzer 8 Kanäle, 24 MHz (SparkFun 18627, für PulseView/sigrok)</a></li>
+                    <li><span class="qty">1x</span><a href="https://www.digikey.de/de/products/result?keywords=TOL-18627" target="_blank">USB Logic Analyzer 8 Kanäle, 24 MHz (SparkFun 18627, für PulseView/sigrok)</a> <a class="doku" href="https://sigrok.org/wiki/PulseView" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">1x</span><a href="https://www.conrad.de/de/p/basetech-bt-2247898-bit-set-116teilig-inkl-bithalter-schraubendreher-2247898.html" target="_blank">Basetech BT-2247898 Bit-Set 116-teilig, inkl. Bithalter-Schraubendreher, Pinzette, Öffnungswerkzeug</a></li>
                 </ul>
-                <p class="ok">84 Artikel, insgesamt 549 Teile.</p>
+                <p class="ok">84 Artikel, insgesamt 545 Teile.</p>
             </div>
+
+            <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./hardware --export csv</span></p>
+            <p data-anim="print"><button type="button" class="term-link export" id="export-csv">[ hackathon-stueckliste.csv herunterladen ]</button></p>
+            <p class="dim" data-anim="print">Stückliste mit Kategorie, Anzahl, Bezeichnung, Shop- und Doku-Link. Öffnet sich in Excel, LibreOffice und Google Sheets.</p>
 
             <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">cd ..</span></p>
             <p class="links" data-anim="print"><a class="term-link" href="./">&lt;- zurück zur Hackathon-Seite</a> <a class="term-link" href="faq.html">FAQ &amp; Vorbereitung -&gt;</a></p>
@@ -210,5 +215,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="hardware.js"></script>
 </body>
 </html>
