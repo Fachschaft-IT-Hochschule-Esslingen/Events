@@ -46,7 +46,7 @@
 
 
 <!--
-    Hardware-Liste, erzeugt aus Hackathon_Bestellliste_v3.xlsx, Stand 12.11. (ohne Preise).
+    Hardware-Liste, abgeglichen mit Hackathon_Materialuebersicht.xlsx, Stand 25.11.2026 (ohne Preise).
     Neues Teil: ein <li> in der passenden Kategorie kopieren, Anzahl, Link und Name anpassen.
     Der [doku]-Link ist optional. Der CSV-Export (hardware.js) liest die Liste direkt von dieser Seite.
 -->
@@ -66,7 +66,6 @@
 
             <div class="doc" data-anim="print">
                 <p>Die ganze Hardware stellen wir. Du musst nichts kaufen, bring einfach deinen Laptop und ein USB-C-Datenkabel mit. Lötkolben stehen bereit.</p>
-                <p class="dim">Der Name führt zum Shop, <span class="doku-sample">[doku]</span> zu Anleitung oder Datenblatt. Stand: Bestellliste, kleine Änderungen sind noch möglich.</p>
 
                 <h2>## Mikrocontroller &amp; Boards</h2>
                 <ul class="parts">
@@ -111,7 +110,7 @@
                     <li><span class="qty">3x</span><a href="https://funduino.com/en/products/8x8-led-matrix-with-max7219-driver-board" target="_blank">MAX7219 8x8-LED-Matrix, SPI, 5 V</a> <a class="doku" href="https://www.analog.com/en/products/max7219.html" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">3x</span><a href="https://funduino.com/en/products/100-leds-5mm-diameter-5-colors" target="_blank">LED 5 mm, 100 Stück, 5 Farben</a></li>
                     <li><span class="qty">5x</span><a href="https://www.berrybase.de/neopixel-stick-mit-8-ws2812-5050-rgb-leds" target="_blank">NeoPixel Stick 8x WS2812</a> <a class="doku" href="https://learn.adafruit.com/adafruit-neopixel-uberguide" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
-                    <li><span class="qty">1x</span><a href="https://www.berrybase.de/en/adafruit-i2s-3w-class-d-amplifier-breakout-max98357a" target="_blank">Adafruit I2S-Verstärker-Breakout MAX98357A, Class D, 3 W</a> <a class="doku" href="https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
+                    <li><span class="qty">2x</span><a href="https://www.berrybase.de/en/adafruit-i2s-3w-class-d-amplifier-breakout-max98357a" target="_blank">Adafruit I2S-Verstärker-Breakout MAX98357A, Class D, 3 W</a> <a class="doku" href="https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">2x</span><a href="https://www.berrybase.de/mono-gehaeuselautsprecher-3w-4-ohm" target="_blank">Mono-Gehäuselautsprecher 3 W, 4 Ohm</a></li>
                     <li><span class="qty">7x</span><a href="https://funduino.com/en/products/oled-0-96-128x64-gvss-i2c" target="_blank">OLED 0.96&quot; 128x64, SSD1306, I2C</a> <a class="doku" href="https://learn.adafruit.com/monochrome-oled-breakouts" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">2x</span><a href="https://funduino.com/en/products/oled-0-91-128x32-white-lettering-gvss-i2c" target="_blank">OLED 0.91&quot; 128x32, I2C</a> <a class="doku" href="https://learn.adafruit.com/monochrome-oled-breakouts" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
@@ -145,6 +144,7 @@
                     <li><span class="qty">6x</span><a href="https://funduino.com/en/products/battery-holder-for-1x-18650-li-ion-cell" target="_blank">Batteriefach 1x 18650 mit 150-mm-Kabel (ohne Stecker)</a></li>
                     <li><span class="qty">5x</span><a href="https://www.berrybase.de/adafruit-usb-type-c-power-delivery-breakout-24-impulse-umdrehung-i2c-jumper-bis-20v" target="_blank">Adafruit USB-C Power Delivery Breakout HUSB238 (5/9/12/15/18/20 V, bis 5 A, per Jumper oder I2C)</a> <a class="doku" href="https://learn.adafruit.com/adafruit-husb238-usb-type-c-power-delivery-breakout" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">1x</span><a href="https://funduino.com/en/products/parallel-1s-lipo-charging-board-fuse-rating-1-5a" target="_blank">1S-LiPo-Ladeboard, 4 Zellen parallel, USB-C, 1 A je Zelle</a></li>
+                    <li><span class="qty">6x</span><a href="https://www.amazon.de/dp/B07QTQ46XN" target="_blank">TP4056 Lademodul für 1S-Lithium-Akkus, USB-C, 5 V, 1 A (Aideepen)</a></li>
                 </ul>
 
                 <h2>## Bauteile</h2>
@@ -188,12 +188,11 @@
                     <li><span class="qty">1x</span><a href="https://www.digikey.de/de/products/result?keywords=TOL-18627" target="_blank">USB Logic Analyzer 8 Kanäle, 24 MHz (SparkFun 18627, für PulseView/sigrok)</a> <a class="doku" href="https://sigrok.org/wiki/PulseView" target="_blank" title="Doku / Datenblatt">[doku]</a></li>
                     <li><span class="qty">1x</span><a href="https://www.conrad.de/de/p/basetech-bt-2247898-bit-set-116teilig-inkl-bithalter-schraubendreher-2247898.html" target="_blank">Basetech BT-2247898 Bit-Set 116-teilig, inkl. Bithalter-Schraubendreher, Pinzette, Öffnungswerkzeug</a></li>
                 </ul>
-                <p class="ok">81 Artikel, insgesamt 491 Teile.</p>
+                <p class="ok">82 Artikel, insgesamt 498 Teile.</p>
             </div>
 
             <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">./hardware --export csv</span></p>
             <p data-anim="print"><button type="button" class="term-link export" id="export-csv">[ hackathon-stueckliste.csv herunterladen ]</button></p>
-            <p class="dim" data-anim="print">Stückliste mit Kategorie, Anzahl, Bezeichnung, Shop- und Doku-Link. Öffnet sich in Excel, LibreOffice und Google Sheets.</p>
 
             <p class="prompt" data-anim="type"><span class="ps1">user@hackathon<span class="fg">:</span>~<span class="fg">$</span></span> <span class="cmd">cd ..</span></p>
             <p class="links" data-anim="print"><a class="term-link" href="./">&lt;- zurück zur Hackathon-Seite</a> <a class="term-link" href="faq.html">FAQ &amp; Vorbereitung -&gt;</a></p>
