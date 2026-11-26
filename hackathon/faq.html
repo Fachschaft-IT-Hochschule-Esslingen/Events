@@ -227,23 +227,35 @@ framework = arduino</pre>
 
                 <h2>## 1. Empfohlen: Chat AI der Academic Cloud</h2>
                 <p><a href="https://chat-ai.academiccloud.de/" target="_blank">Chat AI</a> ist ein KI-Dienst für Hochschulen, betrieben von der GWDG auf Servern in Deutschland. Für Studierende ist er <span class="hl">kostenlos</span>. Mit deinem Hochschulkonto kannst du ihn sofort im Browser nutzen. Mit einem eigenen API-Schlüssel bindest du ihn direkt in VS Code ein, ganz ohne Hin- und Herkopieren.</p>
-
                 <ol class="steps">
                     <li>
                         <p><span class="hl">API-Schlüssel beantragen</span> (rechtzeitig!): Auf der Seite des <a href="https://kisski.gwdg.de/en/leistungen/2-02-llm-service" target="_blank">KISSKI LLM Service</a> auf „Book“ klicken und das Formular ausfüllen. Nimm dieselbe E-Mail-Adresse wie bei deinem Academic-Cloud-Konto. Als Zweck kannst du den Hackathon angeben.</p>
                     </li>
                     <li>
                         <p><span class="hl">Schlüssel testen</span>: Im Terminal eingeben (<span class="hl">DEIN_KEY</span> ersetzen). Kommt eine Liste mit Modellen zurück, funktioniert er.</p>
+                        <p><span class="hl">Linux/macOS:</span></p>
                         <pre class="code">curl -s https://chat-ai.academiccloud.de/v1/models -H "Authorization: Bearer DEIN_KEY"</pre>
+                        <p><span class="hl">Windows</span> (PowerShell, wichtig ist das <span class="hl">.exe</span>):</p>
+                        <pre class="code">curl.exe -s https://chat-ai.academiccloud.de/v1/models -H "Authorization: Bearer DEIN_KEY"</pre>
                     </li>
                     <li>
-                        <p><span class="hl">Continue installieren</span>: In VS Code mit <span class="hl">Strg+Shift+X</span> die Erweiterungen öffnen, nach <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue" target="_blank">Continue</a> suchen und installieren.</p>
+                        <p><span class="hl">Continue installieren</span>: In VS Code mit <span class="hl">Strg+Shift+X</span> die Erweiterungen öffnen, nach <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue" target="_blank">Continue</a> suchen und installieren. Öffne das Continue-Panel einmal, dann legt Continue seinen Ordner <span class="hl">.continue</span> an.</p>
                     </li>
                     <li>
-                        <p><span class="hl">Konfiguration einfügen</span>: Im Continue-Panel auf das Zahnrad klicken. Dann öffnet sich die Datei <span class="hl">config.yaml</span> (unter Linux/macOS <span class="hl">~/.continue/config.yaml</span>, unter Windows <span class="hl">%USERPROFILE%\.continue\config.yaml</span>). Ersetze den Inhalt durch die Konfiguration unten, trag bei allen drei Modellen deinen Schlüssel statt <span class="hl">DEIN_KEY</span> ein und speichere.</p>
+                        <p><span class="hl">Schlüssel sicher ablegen</span>: Der Schlüssel kommt nicht in die Konfiguration, sondern in eine eigene Datei <span class="hl">.env</span> im Continue-Ordner. Die Konfiguration verweist nur darauf. So kannst du sie herzeigen oder weitergeben, ohne deinen Schlüssel mitzuschicken. Im Terminal eingeben (<span class="hl">DEIN_KEY</span> ersetzen):</p>
+                        <p><span class="hl">Linux/macOS:</span></p>
+                        <pre class="code">echo 'CHATAI_KEY=DEIN_KEY' > ~/.continue/.env
+chmod 600 ~/.continue/.env</pre>
+                        <p><span class="hl">Windows</span> (PowerShell):</p>
+                        <pre class="code">Set-Content -Path "$env:USERPROFILE\.continue\.env" -Value "CHATAI_KEY=DEIN_KEY"</pre>
+                        <p class="dim">Legst du die Datei lieber mit einem Editor an: Sie muss genau <span class="hl">.env</span> heißen. Der Windows-Editor speichert sonst gern als <span class="hl">.env.txt</span>, und Continue findet den Schlüssel nicht.</p>
+                    </li>
+                    <li>
+                        <p><span class="hl">Konfiguration einfügen</span>: Im Continue-Panel auf das Zahnrad klicken. Dann öffnet sich die Datei <span class="hl">config.yaml</span> (unter Linux/macOS <span class="hl">~/.continue/config.yaml</span>, unter Windows <span class="hl">%USERPROFILE%\.continue\config.yaml</span>). Ersetze den Inhalt durch die Konfiguration unten und speichere. Du musst nichts anpassen, den Schlüssel holt sich Continue aus der <span class="hl">.env</span>.</p>
                         <div class="code-wrap">
                             <button type="button" class="copy" data-copy="continue-config">kopieren</button>
                             <pre class="code" id="continue-config"># Continue-Konfiguration für Chat AI (GWDG)
+# Der Schlüssel steht in .continue/.env (CHATAI_KEY=...), nicht hier
 name: GWDG Chat AI
 version: 1.0.0
 schema: v1
@@ -254,7 +266,7 @@ models:
     provider: openai
     model: qwen3-coder-next
     apiBase: https://chat-ai.academiccloud.de/v1
-    apiKey: DEIN_KEY
+    apiKey: ${{ secrets.CHATAI_KEY }}
     roles:
       - chat
       - edit
@@ -266,7 +278,7 @@ models:
     provider: openai
     model: qwen3.5-397b-a17b
     apiBase: https://chat-ai.academiccloud.de/v1
-    apiKey: DEIN_KEY
+    apiKey: ${{ secrets.CHATAI_KEY }}
     roles:
       - chat
       - edit
@@ -276,12 +288,12 @@ models:
     provider: openai
     model: deepseek-v4-flash-0731
     apiBase: https://chat-ai.academiccloud.de/v1
-    apiKey: DEIN_KEY
+    apiKey: ${{ secrets.CHATAI_KEY }}
     roles:
       - chat
       - edit</pre>
                         </div>
-                        <p class="dim">Lädt Continue die Datei nicht neu, in VS Code einmal <span class="hl">Developer: Reload Window</span> ausführen (Strg+Shift+P).</p>
+                        <p class="dim">Lädt Continue die Datei nicht neu, in VS Code einmal <span class="hl">Developer: Reload Window</span> ausführen (Strg+Shift+P). Meldet Continue einen fehlenden Schlüssel, prüfe Name und Ort der <span class="hl">.env</span>.</p>
                     </li>
                     <li>
                         <p><span class="hl">Loslegen</span>: Im Continue-Panel oben das Modell <span class="hl">Qwen3 Coder Next (GWDG)</span> auswählen.</p>
@@ -294,7 +306,7 @@ models:
                     </li>
                 </ol>
 
-                <p class="alert"><span class="warn">[ WARN ]</span> Der Schlüssel gehört nur dir: nicht weitergeben und nicht in ein Git-Repository hochladen. Die <span class="hl">config.yaml</span> liegt außerhalb deiner Projekte, dort ist er sicher.</p>
+                <p class="alert"><span class="warn">[ WARN ]</span> Der Schlüssel gehört nur dir: nicht weitergeben und nicht in ein Git-Repository hochladen. Er steht nur in <span class="hl">.continue/.env</span>, außerhalb deiner Projekte. Die <span class="hl">config.yaml</span> enthält ihn nicht und kann gefahrlos geteilt werden.</p>
                 <p class="dim">Welche Modelle es gerade gibt, zeigt der Test aus Schritt 2. Modelle wie <span class="hl">gemma-4-31b-it</span> oder <span class="hl">qwen3.8-27b</span> verstehen auch Bilder, z.B. ein Foto von deinem Steckbrett. Mehr dazu in der <a href="https://docs.hpc.gwdg.de/services/ai-services/coco/index.html" target="_blank">Doku der GWDG</a>.</p>
 
                 <h2>## 2. Weitere kostenlose Zugänge für Studierende</h2>
